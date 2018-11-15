@@ -86,6 +86,7 @@ public interface InvestmentModelInterface {
   /**
    * This method allows the user to create a new portfolio.
    *
+   * @param portfolioName name of the portfolio.
    * @throws IllegalArgumentException if the portfolio name already exists.
    */
   void createNewPortfolio(String portfolioName) throws IllegalArgumentException;

@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 
 import model.InvestmentModel;
+import model.InvestmentModelInterface;
 import utility.DateUtility;
 import utility.Options;
 import view.InvestmentView;
@@ -24,13 +25,13 @@ public class StockMarketController implements IStockMarketController{
 
   private Readable readable;
   private InvestmentView iv;
-  private InvestmentModel im;
+  private InvestmentModelInterface im;
   private boolean quitFlag;
   private String filename;
   private StringBuffer automate = new StringBuffer();
 
 
-  public StockMarketController(Readable readable, InvestmentView iv, InvestmentModel im) {
+  public StockMarketController(Readable readable, InvestmentView iv, InvestmentModelInterface im) {
     this.readable = readable;
 
     this.filename = "savedFile/savedata.txt";
@@ -422,7 +423,7 @@ public class StockMarketController implements IStockMarketController{
   }
 
 
-  public void savePortfolio(InvestmentModel fc) throws IOException {
+  public void savePortfolio(InvestmentModelInterface fc) throws IOException {
 
     try {
 
@@ -506,11 +507,11 @@ public class StockMarketController implements IStockMarketController{
 //    thread.start();
 
 
-    InvestmentModel im = new InvestmentModel();
+    InvestmentModelInterface im = new InvestmentModel();
     InvestmentView iv = new InvestmentView(System.out);
 
 
-    StockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);
+    IStockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);
     sm.startStockMarket();
   }
 

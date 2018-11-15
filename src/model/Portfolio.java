@@ -7,13 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import service.IStockMarketSimulation;
 import service.StockMarketSimulation;
 import transferable.PortfolioTransferable;
 import transferable.StockTransferable;
 import utility.DateUtility;
 
 
-public class Portfolio implements Serializable {
+public class Portfolio implements Serializable,IPortfolio {
   private HashMap<String, Stock> portfolio; //<Ticker,Stock>
 
   public Portfolio() {
@@ -69,7 +70,7 @@ public class Portfolio implements Serializable {
 
     List<String> listOfKeys = filteredTransactionListByDate.stream().map(e -> e.getTicker()).distinct().collect(Collectors.toList());
     StringBuffer sb = new StringBuffer();
-    StockMarketSimulation sms = StockMarketSimulation.getInstance();
+    IStockMarketSimulation sms = StockMarketSimulation.getInstance();
     Double totalInvestment = 0.0;
     Double totalPortfolioValuation = 0.0;
     for (String key : listOfKeys) {

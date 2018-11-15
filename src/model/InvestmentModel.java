@@ -4,16 +4,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
+import service.IStockMarketSimulation;
 import service.StockMarketSimulation;
 import transferable.PortfolioTransferable;
 import utility.DateUtility;
 
 
-public class InvestmentModel implements InvestMentModelInterface,Serializable {
+public class InvestmentModel implements InvestmentModelInterface,Serializable {
   private static final long serialVersionUID = 6033262243162979644L;
-  private HashMap<String, Portfolio> listOfPortfolio;
+  private HashMap<String, IPortfolio> listOfPortfolio;
 
   public InvestmentModel(){
     listOfPortfolio = new HashMap<>();
@@ -27,13 +27,13 @@ public class InvestmentModel implements InvestMentModelInterface,Serializable {
       throw new IllegalArgumentException("Stock Market Closed! It's a Weekend!");
     }
 
-    StockMarketSimulation stockMarket = StockMarketSimulation.getInstance();
+    IStockMarketSimulation stockMarket = StockMarketSimulation.getInstance();
     Stock s = stockMarket.buyStock(ticker,timeStamp,noOfShares);
     if(listOfPortfolio.containsKey(portfolioName.trim())){
       listOfPortfolio.get(portfolioName.trim()).addStocksToPortfolio(s);
     }
     else{
-      Portfolio p = new Portfolio();
+      IPortfolio p = new Portfolio();
       p.addStocksToPortfolio(s);
       listOfPortfolio.put(portfolioName.trim(),p);
     }

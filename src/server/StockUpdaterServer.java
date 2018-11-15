@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import service.IStockMarketSimulation;
 import service.StockMarketSimulation;
 
 public class StockUpdaterServer implements Runnable {
@@ -44,11 +45,11 @@ public class StockUpdaterServer implements Runnable {
   public void run() {
 
 
-    StockMarketSimulation sm = StockMarketSimulation.getInstance();
+    IStockMarketSimulation sm = StockMarketSimulation.getInstance();
 
     for(String tickerSymbol: listOfTicker) {
 
-        sm.updateListing(tickerSymbol);
+        //sm.updateListing(tickerSymbol);
       try {
         TimeUnit.SECONDS.sleep(30);
       } catch (InterruptedException e) {

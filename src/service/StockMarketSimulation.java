@@ -8,7 +8,7 @@ import model.Stock;
 import manager.StockMarketServiceManager;
 import utility.DateUtility;
 
-public class StockMarketSimulation {
+public class StockMarketSimulation implements IStockMarketSimulation {
 
   private HashMap<String, String> companyListing;
 

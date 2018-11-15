@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -48,7 +49,7 @@ public class StockMarketController implements IStockMarketController{
   }
 
 
-  public void startStockMarket() {
+  public void startStockMarket() throws ParseException {
     try {
       iv.viewWelcomeMessage();
       getUserInput();
@@ -59,7 +60,7 @@ public class StockMarketController implements IStockMarketController{
   }
 
 
-  private void getUserInput() throws IOException {
+  private void getUserInput() throws IOException, ParseException {
 
 
     Scanner scan = new Scanner(this.readable);
@@ -172,7 +173,7 @@ public class StockMarketController implements IStockMarketController{
 
   }
 
-  private boolean buyStocks(Scanner scan) throws IOException {
+  private boolean buyStocks(Scanner scan) throws IOException, ParseException {
     iv.viewEnterTicker();//view for ticker!!!
     String ticker = getTicker(scan);
     if(ticker == null && quitFlag == true){
@@ -407,8 +408,12 @@ public class StockMarketController implements IStockMarketController{
         return null;
       }
 
+
       try {
         Integer numberOfStocks = Integer.parseInt(noOfStocks);
+        if(numberOfStocks <= 0){
+          continue;
+        }
         break;
       } catch (Exception e) {
 
@@ -501,7 +506,7 @@ public class StockMarketController implements IStockMarketController{
 
 
 
-  public static void main(String args[]) {
+  public static void main(String args[]) throws ParseException {
 //    Runnable runnable = new StockUpdaterServer(); // or an anonymous class, or lambda...
 //    Thread thread = new Thread(runnable);
 //    thread.start();
@@ -509,6 +514,7 @@ public class StockMarketController implements IStockMarketController{
 
     InvestmentModelInterface im = new InvestmentModel();
     InvestmentView iv = new InvestmentView(System.out);
+
 
 
     IStockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);

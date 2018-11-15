@@ -39,4 +39,5 @@ public class PortfolioTransferable {
   public void setStocks(List<StockTransferable> stocks) {
     this.stocks = stocks;
   }
+
 }

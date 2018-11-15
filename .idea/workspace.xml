@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5627dda8-b439-42e4-91f3-acc446d3c5e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/InvestmentModelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/StockMarketControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockMarketSubmission.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockMarketSubmission.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/controller/StockMarketController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/controller/StockMarketController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestMentModelInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestMentModelInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestmentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestmentModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/Portfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/Portfolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/server/StockUpdaterServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/server/StockUpdaterServer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/server/StockUpdaterServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/server/StockUpdaterServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/service/StockMarketSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/service/StockMarketSimulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/view/InvestmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/view/InvestmentView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savedFile/generateTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/StockMarketSubmission/InvestmentModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/StockMarketSubmission/InvestmentModelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/StockMarketSubmission/StockMarketControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/StockMarketSubmission/StockMarketControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/savedFile/savedata.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/IStockMarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IStockMarketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/StockMarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/StockMarketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/InvestmentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestmentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/InvestmentModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestmentModelInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/transferable/PortfolioTransferable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/transferable/PortfolioTransferable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/InvestmentModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/InvestmentModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/StockMarketControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StockMarketControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,48 +62,38 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="2052" />
+          <entry key="java" value="2817" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2052" />
+          <entry key="JAVA" value="2817" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="20" />
+          <entry key="java" value="25" />
+          <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="20" />
+          <entry key="JAVA" value="25" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/StockMarketController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-70">
-              <caret line="146" column="43" lean-forward="true" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/InvestmentModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-341">
-              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+            <state relative-caret-position="268">
+              <caret line="471" column="44" selection-start-line="471" selection-start-column="44" selection-end-line="471" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,71 +102,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/transferable/PortfolioTransferable.java">
+        <entry file="file://$PROJECT_DIR$/savedFile/generateTests.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#455#456#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#601#602#0" expanded="true" />
-                <element signature="e#651#652#0" expanded="true" />
-                <element signature="e#689#690#0" expanded="true" />
-                <element signature="e#737#738#0" expanded="true" />
-                <element signature="e#760#761#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Transaction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Stock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="11" column="46" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="46" />
-              <folding>
-                <element signature="e#1195#1196#0" expanded="true" />
-                <element signature="e#1218#1219#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/InvestmentModelTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Portfolio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-32">
-              <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="257">
+              <caret line="216" column="1" lean-forward="true" selection-start-line="216" selection-start-column="1" selection-end-line="222" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -195,32 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/StockMarketControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="139" column="16" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/StockMarketSimulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-391">
-              <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/InvestmentModelInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="-275">
+              <caret line="303" column="13" selection-start-line="303" selection-start-column="13" selection-end-line="303" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -259,6 +153,9 @@
       <find>Portfolio</find>
       <find>StockMarketSimulation.g</find>
       <find>getTicker</find>
+      <find>getUSerInput</find>
+      <find>generatetests</find>
+      <find>automate</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -282,18 +179,18 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/validation/Validation.java" />
         <option value="$PROJECT_DIR$/src/view/InvestmentView.java" />
-        <option value="$PROJECT_DIR$/src/controller/IStockMarketController.java" />
         <option value="$PROJECT_DIR$/src/model/InvestMentModelInterface.java" />
         <option value="$PROJECT_DIR$/savedFile/generateTests.txt" />
         <option value="$PROJECT_DIR$/src/model/InvestmentModelInterface.java" />
         <option value="$PROJECT_DIR$/src/service/StockMarketSimulation.java" />
         <option value="$PROJECT_DIR$/src/model/Portfolio.java" />
         <option value="$PROJECT_DIR$/src/server/StockUpdaterServer.java" />
-        <option value="$PROJECT_DIR$/src/controller/StockMarketController.java" />
-        <option value="$PROJECT_DIR$/test/StockMarketControllerTest.java" />
         <option value="$PROJECT_DIR$/src/model/InvestmentModel.java" />
-        <option value="$PROJECT_DIR$/test/InvestmentModelTest.java" />
         <option value="$PROJECT_DIR$/src/transferable/PortfolioTransferable.java" />
+        <option value="$PROJECT_DIR$/test/InvestmentModelTest.java" />
+        <option value="$PROJECT_DIR$/src/controller/IStockMarketController.java" />
+        <option value="$PROJECT_DIR$/test/StockMarketControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/controller/StockMarketController.java" />
       </list>
     </option>
   </component>
@@ -309,7 +206,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-12" />
     <option name="width" value="1935" />
     <option name="height" value="1031" />
@@ -325,6 +222,11 @@
             <path>
               <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
               <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
+              <item name="savedFile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
@@ -379,6 +281,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -395,7 +302,7 @@
     <property name="SearchEverywhereHistoryKey" value="evaluate&#9;PSI&#9;JAVA://model.InvestmentModelInterface#evaluatePortfolio" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542282906984" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542301382932" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -422,71 +329,72 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InvestmentModelTest.testCreateMultiplePortfolio">
-    <configuration name="InvestmentModelTest.testBuyStockMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StockMarketControllerTest.testBuyStockZeroShares">
+    <configuration name="StockMarketController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.StockMarketController" />
+      <module name="StockMarketSubmission" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockMarketControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockMarketSubmission" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InvestmentModelTest" />
-      <option name="METHOD_NAME" value="testBuyStockMethod" />
+      <option name="MAIN_CLASS_NAME" value="StockMarketControllerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockMarketControllerTest.testBuyStockInvalidDate2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockMarketSubmission" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="StockMarketControllerTest" />
+      <option name="METHOD_NAME" value="testBuyStockInvalidDate2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InvestmentModelTest.testCreateMultiplePortfolio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StockMarketControllerTest.testBuyStockValidDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockMarketSubmission" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InvestmentModelTest" />
-      <option name="METHOD_NAME" value="testCreateMultiplePortfolio" />
+      <option name="MAIN_CLASS_NAME" value="StockMarketControllerTest" />
+      <option name="METHOD_NAME" value="testBuyStockValidDate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InvestmentModelTest.testCreateOnePortfolio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StockMarketControllerTest.testBuyStockZeroShares" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockMarketSubmission" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InvestmentModelTest" />
-      <option name="METHOD_NAME" value="testCreateOnePortfolio" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InvestmentModelTest.testGetPortfolionName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StockMarketSubmission" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InvestmentModelTest" />
-      <option name="METHOD_NAME" value="testGetPortfolionName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InvestmentModelTest.testGetPortfolionNameFirstCall" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StockMarketSubmission" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="InvestmentModelTest" />
-      <option name="METHOD_NAME" value="testGetPortfolionNameFirstCall" />
+      <option name="MAIN_CLASS_NAME" value="StockMarketControllerTest" />
+      <option name="METHOD_NAME" value="testBuyStockZeroShares" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.InvestmentModelTest.testBuyStockMethod" />
-      <item itemvalue="JUnit.InvestmentModelTest.testGetPortfolionName" />
-      <item itemvalue="JUnit.InvestmentModelTest.testGetPortfolionNameFirstCall" />
-      <item itemvalue="JUnit.InvestmentModelTest.testCreateOnePortfolio" />
-      <item itemvalue="JUnit.InvestmentModelTest.testCreateMultiplePortfolio" />
+      <item itemvalue="Application.StockMarketController" />
+      <item itemvalue="JUnit.StockMarketControllerTest.testBuyStockInvalidDate2" />
+      <item itemvalue="JUnit.StockMarketControllerTest.testBuyStockValidDate" />
+      <item itemvalue="JUnit.StockMarketControllerTest" />
+      <item itemvalue="JUnit.StockMarketControllerTest.testBuyStockZeroShares" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InvestmentModelTest.testCreateMultiplePortfolio" />
-        <item itemvalue="JUnit.InvestmentModelTest.testCreateOnePortfolio" />
-        <item itemvalue="JUnit.InvestmentModelTest.testGetPortfolionName" />
-        <item itemvalue="JUnit.InvestmentModelTest.testGetPortfolionNameFirstCall" />
-        <item itemvalue="JUnit.InvestmentModelTest.testBuyStockMethod" />
+        <item itemvalue="JUnit.StockMarketControllerTest.testBuyStockZeroShares" />
+        <item itemvalue="Application.StockMarketController" />
+        <item itemvalue="JUnit.StockMarketControllerTest" />
+        <item itemvalue="JUnit.StockMarketControllerTest.testBuyStockValidDate" />
+        <item itemvalue="JUnit.StockMarketControllerTest.testBuyStockInvalidDate2" />
       </list>
     </recent_temporary>
   </component>
@@ -502,50 +410,50 @@
       <updated>1542145913173</updated>
       <workItem from="1542145947063" duration="9503000" />
       <workItem from="1542165235436" duration="37123000" />
-      <workItem from="1542270554195" duration="11574000" />
+      <workItem from="1542270554195" duration="16575000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="InvestmentModelTest_testBuyStockMethod - 2018.11.15 at 06h 28m 27s.xml">
-      <configuration name="InvestmentModelTest.testBuyStockMethod" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockInvalidDate1 - 2018.11.15 at 11h 42m 14s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockInvalidDate1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testBuyStockMethod - 2018.11.15 at 06h 28m 50s.xml">
-      <configuration name="InvestmentModelTest.testBuyStockMethod" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockInvalidDate1 - 2018.11.15 at 11h 44m 31s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockInvalidDate1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testGetPortfolionName - 2018.11.15 at 06h 34m 20s.xml">
-      <configuration name="InvestmentModelTest.testGetPortfolionName" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockInvalidDate2 - 2018.11.15 at 11h 51m 57s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockInvalidDate2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testGetPortfolionNameFirstCall - 2018.11.15 at 06h 35m 24s.xml">
-      <configuration name="InvestmentModelTest.testGetPortfolionNameFirstCall" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockValidDate - 2018.11.15 at 11h 55m 15s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockValidDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testGetPortfolionName - 2018.11.15 at 06h 37m 09s.xml">
-      <configuration name="InvestmentModelTest.testGetPortfolionName" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockValidDate - 2018.11.15 at 11h 56m 00s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockValidDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testGetPortfolionName - 2018.11.15 at 06h 43m 43s.xml">
-      <configuration name="InvestmentModelTest.testGetPortfolionName" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockValidDate - 2018.11.15 at 11h 56m 25s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockValidDate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testGetPortfolionName - 2018.11.15 at 06h 44m 11s.xml">
-      <configuration name="InvestmentModelTest.testGetPortfolionName" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest - 2018.11.15 at 11h 56m 33s.xml">
+      <configuration name="StockMarketControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testCreateOnePortfolio - 2018.11.15 at 06h 50m 09s.xml">
-      <configuration name="InvestmentModelTest.testCreateOnePortfolio" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest - 2018.11.15 at 11h 58m 03s.xml">
+      <configuration name="StockMarketControllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testCreateMultiplePortfolio - 2018.11.15 at 06h 51m 09s.xml">
-      <configuration name="InvestmentModelTest.testCreateMultiplePortfolio" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockZeroShares - 2018.11.15 at 12h 00m 48s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockZeroShares" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InvestmentModelTest_testCreateMultiplePortfolio - 2018.11.15 at 06h 51m 23s.xml">
-      <configuration name="InvestmentModelTest.testCreateMultiplePortfolio" configurationId="JUnit" />
+    <history-entry file="StockMarketControllerTest_testBuyStockZeroShares - 2018.11.15 at 12h 01m 30s.xml">
+      <configuration name="StockMarketControllerTest.testBuyStockZeroShares" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58200000" />
+    <option name="totallyTimeSpent" value="63201000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1290" height="687" extended-state="1" />
+    <frame x="-8" y="0" width="1290" height="687" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22845529" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22845529" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -555,8 +463,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.328594" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.113513514" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39968404" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14774776" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2918919" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -576,35 +484,35 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32956383" />
     </layout>
     <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Learn" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22845529" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24959612" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="4" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.48815167" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Database" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Learn" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.328594" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12432432" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2918919" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32792792" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.32956383" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,20 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/savedFile/generateTests.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/IStockMarketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/IStockMarketSimulation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -688,37 +582,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/StockMarketSimulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utility/DateUtility.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-419">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/StockMarketControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="139" column="16" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/StockMarketDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
@@ -729,30 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/InvestmentView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/StockMarketDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/StockMarketController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70">
-          <caret line="146" column="43" lean-forward="true" selection-start-line="146" selection-start-column="43" selection-end-line="146" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,9 +645,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Portfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1547">
+          <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Stock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="136">
           <caret line="11" column="46" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="e#1195#1196#0" expanded="true" />
@@ -809,10 +666,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Portfolio.java">
+    <entry file="file://$PROJECT_DIR$/src/service/StockMarketDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="93" column="7" selection-start-line="93" selection-start-column="7" selection-end-line="93" selection-end-column="7" />
+        <state relative-caret-position="34">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/InvestmentModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/StockMarketSimulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/IStockMarketController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/InvestmentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -821,15 +712,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/InvestmentModelTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
+        <state relative-caret-position="-449">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/InvestmentModel.java">
+    <entry file="file://$PROJECT_DIR$/savedFile/generateTests.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        <state relative-caret-position="257">
+          <caret line="216" column="1" lean-forward="true" selection-start-line="216" selection-start-column="1" selection-end-line="222" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/StockMarketControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-275">
+          <caret line="303" column="13" selection-start-line="303" selection-start-column="13" selection-end-line="303" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/StockMarketController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="471" column="44" selection-start-line="471" selection-start-column="44" selection-end-line="471" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

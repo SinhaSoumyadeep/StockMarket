@@ -1,0 +1,243 @@
+{in = new StringReader("2,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("2,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("2,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,abc,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,abc,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,abc,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,abc,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,11-12-2018,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,11-12-2018,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("1,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,abc,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,11-12-2018,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("2,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("1,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,abc,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,goog,11-12-2018,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("2,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,0,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,0,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("3,msft,2018-11-14,0,q,q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ System.out.println(out.toString());
+ assertEquals("", out.toString());
+}
+

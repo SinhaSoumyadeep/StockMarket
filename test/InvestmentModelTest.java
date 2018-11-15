@@ -133,6 +133,23 @@ public class InvestmentModelTest {
   }
 
   /**
+   * Test to check if exception is thrown when timestamp entered is a date way back in the past
+   * and for which data does not exist.
+   */
+
+  @Test
+  public void testBuyStockDatePast() {
+    im = new InvestmentModel();
+    try {
+      im.buyStocks("msft", "1950-11-13", 10, "abc");
+    } catch (Exception e) {
+      assertEquals("",
+              e.getMessage());
+    }
+
+  }
+
+  /**
    * Test to check if buyStock method works correctly.
    */
 
@@ -160,6 +177,7 @@ public class InvestmentModelTest {
     assertEquals(0, im.getPortfolioNames().size());
 
   }
+
 
   /**
    * Test to check if correct portfolio name is returned when user asks to getPortfolioName after

@@ -22,7 +22,7 @@ import utility.Options;
 import view.InvestmentView;
 
 
-public class StockMarketController implements IStockMarketController{
+public class StockMarketController implements IStockMarketController {
 
   private Readable readable;
   private InvestmentView iv;
@@ -30,6 +30,7 @@ public class StockMarketController implements IStockMarketController{
   private boolean quitFlag;
   private String filename;
   private StringBuffer automate = new StringBuffer();
+  private Scanner scan;
 
 
   public StockMarketController(Readable readable, InvestmentView iv, InvestmentModelInterface im) {
@@ -45,7 +46,14 @@ public class StockMarketController implements IStockMarketController{
 
     this.iv = iv;
     this.im = im;
+
+    if(this.readable == null || this.iv == null || this.im == null){
+      throw new IllegalArgumentException("Readable or View or Model cannot be Null.");
+
+    }
     this.quitFlag = false;
+    this.scan = new Scanner(this.readable);
+
   }
 
 
@@ -63,18 +71,14 @@ public class StockMarketController implements IStockMarketController{
   private void getUserInput() throws IOException, ParseException {
 
 
-    Scanner scan = new Scanner(this.readable);
-
-
     while (true) {
 
       iv.viewIntroMessage();
 
 
       String str = scan.next();
-      automate.append(str+",");
-      if(quitHelper(str))
-      {
+      automate.append(str + "\n");
+      if (quitHelper(str)) {
         generateTestCases();
         quitFlag = true;
         return;
@@ -96,7 +100,7 @@ public class StockMarketController implements IStockMarketController{
           String portfolioName = "";
           try {
             portfolioName = selectPortfolio(scan);
-            if(portfolioName == null && quitFlag == true){
+            if (portfolioName == null && quitFlag == true) {
               continue;
             }
           } catch (Exception e) {
@@ -104,13 +108,12 @@ public class StockMarketController implements IStockMarketController{
           }
 
           String date = getDate(scan);
-          if(date == null && quitFlag == true){
+          if (date == null && quitFlag == true) {
             continue;
           }
           try {
             iv.displayPortfolio(im.evaluatePortfolio(portfolioName.trim(), date.trim()), Options.DETAILED_STATEMENT);
-          }
-          catch (IllegalArgumentException e){
+          } catch (IllegalArgumentException e) {
             iv.printExceptions(e.getMessage());
             continue;
           }
@@ -122,7 +125,7 @@ public class StockMarketController implements IStockMarketController{
           String portName = "";
           try {
             portName = selectPortfolio(scan);
-            if(portName == null && quitFlag == true){
+            if (portName == null && quitFlag == true) {
               continue;
             }
           } catch (Exception e) {
@@ -130,23 +133,22 @@ public class StockMarketController implements IStockMarketController{
           }
 
           String portdate = getDate(scan);
-          if(portdate == null && quitFlag == true){
+          if (portdate == null && quitFlag == true) {
             continue;
           }
-          try{
+          try {
 
             iv.displayPortfolio(im.evaluatePortfolio(portName.trim(), portdate.trim()), Options.MINI_STATEMENT);
-          }
-          catch (IllegalArgumentException e){
+          } catch (IllegalArgumentException e) {
             iv.printExceptions(e.getMessage());
             continue;
           }
           break;
 
         case 3:
-          if(!buyStocks(scan) && quitFlag){
+          if (!buyStocks(scan) && quitFlag) {
             continue;
-          }else {
+          } else {
             iv.viewBuyStockAcknowledgement();
             savePortfolio(im);
           }
@@ -155,9 +157,9 @@ public class StockMarketController implements IStockMarketController{
 
         case 4:
           //create new portfolio;
-          if(!createNewPortfolio(scan) && quitFlag){
+          if (!createNewPortfolio(scan) && quitFlag) {
             continue;
-          }else {
+          } else {
             iv.displayAllPortfolioNames(im.getPortfolioNames());
             savePortfolio(im);
           }
@@ -176,28 +178,25 @@ public class StockMarketController implements IStockMarketController{
   private boolean buyStocks(Scanner scan) throws IOException, ParseException {
     iv.viewEnterTicker();//view for ticker!!!
     String ticker = getTicker(scan);
-    if(ticker == null && quitFlag == true){
+    if (ticker == null && quitFlag == true) {
       return false;
     }
     String date1 = getDate(scan);
-    if(date1 == null && quitFlag == true){
+    if (date1 == null && quitFlag == true) {
       return false;
     }
     Integer noOfStocks = getNoOfShares(scan);
-    if(noOfStocks == null && quitFlag == true){
+    if (noOfStocks == null && quitFlag == true) {
       return false;
     }
-    String portfolio = enterOptions(im.getPortfolioNames(),scan);
-    if (quitFlag && portfolio == null)
-    {
+    String portfolio = enterOptions(im.getPortfolioNames(), scan);
+    if (quitFlag && portfolio == null) {
       return false;
     }
 
     try {
       im.buyStocks(ticker.trim(), date1.trim(), noOfStocks, portfolio);
-    }
-    catch (IllegalArgumentException e)
-    {
+    } catch (IllegalArgumentException e) {
       iv.printExceptions(e.getMessage());
       quitFlag = true;
       return false;
@@ -211,9 +210,8 @@ public class StockMarketController implements IStockMarketController{
     while (true) {
       iv.choosePortfolio();
       String opt = scan.next().trim();
-      automate.append(opt+",");
-      if(quitHelper(opt))
-      {
+      automate.append(opt + "\n");
+      if (quitHelper(opt)) {
         quitFlag = true;
         return null;
       }
@@ -230,12 +228,11 @@ public class StockMarketController implements IStockMarketController{
       }
     }
 
-    while(true) {
+    while (true) {
 
       try {
         iv.displayAllPortfolioNames(im.getPortfolioNames());
-      }catch (Exception e)
-      {
+      } catch (Exception e) {
         createNewPortfolio(scan);
         iv.displayAllPortfolioNames(im.getPortfolioNames());
       }
@@ -243,22 +240,18 @@ public class StockMarketController implements IStockMarketController{
 
       iv.enterOptions();
       String op = scan.next().trim();
-      automate.append(op+",");
-      if(quitHelper(op))
-      {
+      automate.append(op + "\n");
+      if (quitHelper(op)) {
         quitFlag = true;
         return null;
       }
       try {
         Integer option = Integer.parseInt(op);
 
-        if(option <= im.getPortfolioNames().size())
-        {
+        if (option <= im.getPortfolioNames().size()) {
           return im.getPortfolioNames().get(option - 1);
         }
-      }
-      catch (Exception e)
-      {
+      } catch (Exception e) {
         iv.invalidOption();
         continue;
       }
@@ -269,19 +262,14 @@ public class StockMarketController implements IStockMarketController{
   }
 
 
-
-
-
-
   private boolean createNewPortfolio(Scanner scan) throws IOException {
     iv.createNewPortfolio();
     boolean methodExecutedProperly = false;
     while (true) {
       iv.enterPortfolio();
       String portfolioName = scan.next().trim();
-      automate.append(portfolioName+",");
-      if(quitHelper(portfolioName))
-      {
+      automate.append(portfolioName + "\n");
+      if (quitHelper(portfolioName)) {
         quitFlag = true;
         return false;
       }
@@ -290,16 +278,13 @@ public class StockMarketController implements IStockMarketController{
 
         try {
           im.createNewPortfolio(portfolioName);
-        }
-        catch (IllegalArgumentException e)
-        {
+        } catch (IllegalArgumentException e) {
           iv.printExceptions(e.getMessage());
           continue;
         }
         methodExecutedProperly = true;
         break;
-      }
-      else {
+      } else {
         createNewPortfolio(scan);
       }
     }
@@ -307,9 +292,9 @@ public class StockMarketController implements IStockMarketController{
   }
 
 
-  private boolean quitHelper(String str){
+  private boolean quitHelper(String str) {
     if (str.contains("q") || str.contains("Q")) {
-      return  true;
+      return true;
     }
     return false;
   }
@@ -322,13 +307,11 @@ public class StockMarketController implements IStockMarketController{
 
       iv.enterOptions();
       String option = scan.next();
-      automate.append(option+",");
-      if(quitHelper(option))
-      {
+      automate.append(option + "\n");
+      if (quitHelper(option)) {
         quitFlag = true;
         return null;
       }
-
 
 
       Integer temp;
@@ -355,9 +338,8 @@ public class StockMarketController implements IStockMarketController{
 
   private String getTicker(Scanner scan) {
     String ticker = scan.next();
-    automate.append(ticker+",");
-    if(quitHelper(ticker))
-    {
+    automate.append(ticker + "\n");
+    if (quitHelper(ticker)) {
       quitFlag = true;
       return null;
     }
@@ -374,9 +356,8 @@ public class StockMarketController implements IStockMarketController{
 
 
       date = scan.next();
-      automate.append(date+",");
-      if(quitHelper(date))
-      {
+      automate.append(date + "\n");
+      if (quitHelper(date)) {
         quitFlag = true;
         return null;
       }
@@ -401,9 +382,8 @@ public class StockMarketController implements IStockMarketController{
       iv.viewEnterNumberOfShares();
 
       noOfStocks = scan.next();
-      automate.append(noOfStocks+",");
-      if(quitHelper(noOfStocks))
-      {
+      automate.append(noOfStocks + "\n");
+      if (quitHelper(noOfStocks)) {
         quitFlag = true;
         return null;
       }
@@ -411,7 +391,7 @@ public class StockMarketController implements IStockMarketController{
 
       try {
         Integer numberOfStocks = Integer.parseInt(noOfStocks);
-        if(numberOfStocks <= 0){
+        if (numberOfStocks <= 0) {
           continue;
         }
         break;
@@ -477,8 +457,7 @@ public class StockMarketController implements IStockMarketController{
   }
 
 
-  public void generateTestCases()
-  {
+  public void generateTestCases() {
     try (BufferedWriter bw = new BufferedWriter(new FileWriter("savedFile/generateTests.txt", true))) {
 
 
@@ -486,14 +465,13 @@ public class StockMarketController implements IStockMarketController{
       replacement = replacement.substring(0, automate.toString().length() - 1);
 
 
-      String a = "{in = new StringReader(\""+replacement+"\");\n" +
+      String a = "{in = new StringReader(\"" + replacement + "\");\n" +
               " Appendable out = new StringBuffer();\n" +
               " iv = new InvestmentView(out);\n" +
               " smc = new StockMarketController(in, iv, im);\n" +
               " smc.startStockMarket();\n" +
-              " System.out.println(out.toString());\n" +
               " assertEquals(\"\", out.toString());\n}";
-      bw.write(a+"\n\n");
+      bw.write(a + "\n\n");
 
       System.out.println("Done");
 
@@ -505,7 +483,6 @@ public class StockMarketController implements IStockMarketController{
   }
 
 
-
   public static void main(String args[]) throws ParseException {
 //    Runnable runnable = new StockUpdaterServer(); // or an anonymous class, or lambda...
 //    Thread thread = new Thread(runnable);
@@ -514,7 +491,6 @@ public class StockMarketController implements IStockMarketController{
 
     InvestmentModelInterface im = new InvestmentModel();
     InvestmentView iv = new InvestmentView(System.out);
-
 
 
     IStockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);

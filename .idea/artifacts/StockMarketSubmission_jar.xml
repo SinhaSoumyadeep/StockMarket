@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="StockMarketSubmission:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/StockMarketSubmission_jar</output-path>
+    <root id="archive" name="StockMarketSubmission.jar">
+      <element id="module-output" name="StockMarketSubmission" />
+    </root>
+  </artifact>
+</component>

@@ -4,20 +4,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 
+/**
+ * This class is used to fetch data from the API.
+ */
 public class StockMarketDAOImpl implements StockMarketDAO {
 
-  URL url = null;
+  private URL url = null;
 
-  private String fetchData(String ticker){
+  /**
+   * This method is used to fetch data from the API.
+   */
+  private String fetchData(String ticker) {
 
-    ArrayList<String> apiKey = new ArrayList<String>(){
-      {
-        add("IH89Q5ULXTKFGJDN");
-        add("KDFVUFANR0SKZ5TW");
-      }
-    };
+    String apiKey = "IH89Q5ULXTKFGJDN";
 
     Integer api_counter = 0;
     try {
@@ -28,16 +28,13 @@ public class StockMarketDAOImpl implements StockMarketDAO {
      data (comma-separated values:csv). This service also supports JSON
      which you are welcome to use.
       */
-      //https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo
-
 
       url = new URL("https://www.alphavantage"
               + ".co/query?function=TIME_SERIES_DAILY"
               + "&outputsize=full"
               + "&symbol"
-              + "=" + ticker + "&apikey="+apiKey.get(0)+"&datatype=csv");
-    }
-    catch (MalformedURLException e) {
+              + "=" + ticker + "&apikey=" + apiKey + "&datatype=csv");
+    } catch (MalformedURLException e) {
       throw new RuntimeException("the alphavantage API has either changed or "
               + "no longer works");
     }
@@ -59,32 +56,34 @@ public class StockMarketDAOImpl implements StockMarketDAO {
       in = url.openStream();
       int b;
 
-      while ((b=in.read())!=-1) {
-        output.append((char)b);
+      while ((b = in.read()) != -1) {
+        output.append((char) b);
       }
-    }
-    catch (IOException e) {
-      throw new IllegalArgumentException("No price data found for "+ticker);
+    } catch (IOException e) {
+      throw new IllegalArgumentException("No price data found for " + ticker);
     }
 
 
-    if(output.toString().contains("Our standard API call frequency is 5 calls per minute and 500 calls per day"))
-    {
+    if (output.toString().contains("Our standard API call frequency is 5 calls per minute and 500 calls per day")) {
       throw new IllegalArgumentException("5 calls per minute and 500 calls per day");
     }
-   // System.out.println(output);
-    return output.toString().substring(output.toString().indexOf('\n')+1);
+
+    return output.toString().substring(output.toString().indexOf('\n') + 1);
   }
 
 
+  /**
+   * This method takes in a company ticker and returns the company listing for that ticker.
+   *
+   * @param ticker the ticker.
+   * @return the company listing.
+   */
   @Override
   public String getCompanyListing(String ticker) {
 
     String data = fetchData(ticker);
     return data.trim();
   }
-
-
 
 
 }

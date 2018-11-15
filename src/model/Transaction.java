@@ -2,6 +2,10 @@ package model;
 
 import java.io.Serializable;
 
+/**
+ * This class represents the each transactions of the user while purchasing stock and selling stock.
+ * This class has been made immutable.
+ */
 public final class Transaction implements Serializable {
 
   private final String ticker;
@@ -9,34 +13,56 @@ public final class Transaction implements Serializable {
   private final String buyingPrice;
   private final Integer noOfShares;
 
-  public String getTicker() {
-    return ticker;
-  }
-
-  public String getTimeStamp() {
-    return timeStamp;
-  }
-
-  public String getBuyingPrice() {
-    return buyingPrice;
-  }
-
-  public Integer getNoOfShares() {
-    return noOfShares;
-  }
-
-  public Transaction(String ticker, String timeStamp, String buyingPrice, Integer noOfShares){
+  /**
+   * This constructor is used to instantiate an object of  Transaction.
+   *
+   * @param ticker      the ticker of the stock.
+   * @param timeStamp   timestamp of the stock.
+   * @param buyingPrice buying price of the stock.
+   * @param noOfShares  number of shares bought in one transaction.
+   */
+  public Transaction(String ticker, String timeStamp, String buyingPrice, Integer noOfShares) {
     this.ticker = ticker;
     this.timeStamp = timeStamp;
     this.buyingPrice = buyingPrice;
     this.noOfShares = noOfShares;
   }
 
-  public String toString()
-  {
-    return "Ticker: "+ticker+" TimeStamp: "+timeStamp+" Buying Price: "+buyingPrice + " No Of Shares: "+noOfShares;
+  /**
+   * This method is used to get the ticker of the stock.
+   *
+   * @return the ticker symbol
+   */
+  public String getTicker() {
+    return ticker;
   }
 
+  /**
+   * This method returns the time stamp on which the stock was purchased or sold.
+   *
+   * @return time stamp.
+   */
+  public String getTimeStamp() {
+    return timeStamp;
+  }
+
+  /**
+   * This method returns the price on which the stock was bought.
+   *
+   * @return price of the stock.
+   */
+  public String getBuyingPrice() {
+    return buyingPrice;
+  }
+
+  /**
+   * The method is used to get the number of shares for a particular size.
+   *
+   * @return total number of share.
+   */
+  public Integer getNoOfShares() {
+    return noOfShares;
+  }
 
 
 }

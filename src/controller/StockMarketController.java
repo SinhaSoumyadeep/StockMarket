@@ -1,13 +1,9 @@
 package controller;
 
-
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.text.ParseException;
@@ -22,6 +18,35 @@ import utility.Options;
 import view.InvestmentView;
 
 
+/**
+ * This is the concrete implementation of the IStockMarketController interface. This method provides
+ * a method where a user can start the application and buy stocks, view composition of portfolios
+ * and create portfolios.
+ *
+ * <p>If, the input is either the letter 'q' or the letter 'Q', the controller
+ * will return to the main menu if the key is pressed in sub menu else it will quit the
+ * application.
+ *
+ * <p>The controller also lets the user view the composition of the portfolio.</p>
+ *
+ * <p>The composition of the portfolio can  be seen in detail where in the details of the stocks
+ * purchased can also be viewed.</p>
+ *
+ * <p>Create new portfolio.</p>
+ *
+ * <p>buy stocks and add to existing portfolio.</p>
+ *
+ * <p>This controller takes a batch of user input in the form of a string. It validates the string
+ * and if an input is unexpected. Anything that cannot be parsed or the controller deems it to to
+ * invalid, it asks the user to input again. If the user enters a wrong input for a  field, it asks
+ * the user to input again from the same point. for example if the user enters an invalid date , it
+ * will ask the user to enter the date repetitively until the user enters a valid date or
+ * quits.</p>
+ *
+ * <p>If the move was invalid as signaled by the model, the controller transmits a message to
+ * the  Appendable object “Invalid Options” plus any informative message about why the option was
+ * invalid, and resume waiting for valid input.</p>
+ */
 public class StockMarketController implements IStockMarketController {
 
   private Readable readable;
@@ -29,10 +54,16 @@ public class StockMarketController implements IStockMarketController {
   private InvestmentModelInterface im;
   private boolean quitFlag;
   private String filename;
-  private StringBuffer automate = new StringBuffer();
   private Scanner scan;
 
 
+  /**
+   * Instantiates a new Stock market controller.
+   *
+   * @param readable the readable object.
+   * @param iv       the InverstmentView  Object
+   * @param im       the object of InvestmentModelInterface
+   */
   public StockMarketController(Readable readable, InvestmentView iv, InvestmentModelInterface im) {
     this.readable = readable;
 
@@ -47,7 +78,7 @@ public class StockMarketController implements IStockMarketController {
     this.iv = iv;
     this.im = im;
 
-    if(this.readable == null || this.iv == null || this.im == null){
+    if (this.readable == null || this.iv == null || this.im == null) {
       throw new IllegalArgumentException("Readable or View or Model cannot be Null.");
 
     }
@@ -56,7 +87,13 @@ public class StockMarketController implements IStockMarketController {
 
   }
 
-
+  /**
+   * Start the stock market where the user of the application can buy stocks, create portfolio, view
+   * the composition of the portfolio. the user can quit the application at any point.
+   *
+   * @throws ParseException if the date comparision fails.
+   */
+  @Override
   public void startStockMarket() throws ParseException {
     try {
       iv.viewWelcomeMessage();
@@ -68,6 +105,16 @@ public class StockMarketController implements IStockMarketController {
   }
 
 
+  /**
+   * This method takes continuous inputs from the user. It validates the string  and if an input is
+   * unexpected. Anything that cannot be parsed or the controller deems it to to invalid, it asks
+   * the user to input again. If the user enters a wrong input for a  field, it asks the user to
+   * input again from the same point. for example if the user enters an invalid date , it will ask
+   * the user to enter the date repetitively until the user enters a valid date or  quits.
+   *
+   * @throws IOException    if the Appendable object fails.
+   * @throws ParseException if the date validation fails.
+   */
   private void getUserInput() throws IOException, ParseException {
 
 
@@ -77,9 +124,7 @@ public class StockMarketController implements IStockMarketController {
 
 
       String str = scan.next();
-      automate.append(str + "\n");
       if (quitHelper(str)) {
-        generateTestCases();
         quitFlag = true;
         return;
       }
@@ -175,6 +220,14 @@ public class StockMarketController implements IStockMarketController {
 
   }
 
+  /**
+   * This method takes in a scanner object. this method lets the user buy stocks.
+   *
+   * @param scan the scanner object.
+   * @return true if the method executes successfully, and the user is able to buy stocks.
+   * @throws IOException    if the Appendable object fails.
+   * @throws ParseException if the date validation fails.
+   */
   private boolean buyStocks(Scanner scan) throws IOException, ParseException {
     iv.viewEnterTicker();//view for ticker!!!
     String ticker = getTicker(scan);
@@ -204,13 +257,21 @@ public class StockMarketController implements IStockMarketController {
     return true;
   }
 
-
+  /**
+   * This method lets user choose an existing portfolio while buying new stocks or lets the user
+   * create a new portfolio while in the process of buying stocks. and return the chosen portfolio
+   * name.
+   *
+   * @param listOfPortfolio this method takes in a list of portfolio names.
+   * @param scan            this is the scanner object.
+   * @return the chosen portfolio name.
+   * @throws IOException when the Appendable object fails.
+   */
   private String enterOptions(List<String> listOfPortfolio, Scanner scan) throws IOException {
 
     while (true) {
       iv.choosePortfolio();
       String opt = scan.next().trim();
-      automate.append(opt + "\n");
       if (quitHelper(opt)) {
         quitFlag = true;
         return null;
@@ -240,7 +301,6 @@ public class StockMarketController implements IStockMarketController {
 
       iv.enterOptions();
       String op = scan.next().trim();
-      automate.append(op + "\n");
       if (quitHelper(op)) {
         quitFlag = true;
         return null;
@@ -261,14 +321,19 @@ public class StockMarketController implements IStockMarketController {
 
   }
 
-
+  /**
+   * This method lets the user create a new portfolio.
+   *
+   * @param scan the scanner object.
+   * @return true if the method executes successfully,the user can create new portfolio.
+   * @throws IOException when the Appendable fails.
+   */
   private boolean createNewPortfolio(Scanner scan) throws IOException {
     iv.createNewPortfolio();
     boolean methodExecutedProperly = false;
     while (true) {
       iv.enterPortfolio();
       String portfolioName = scan.next().trim();
-      automate.append(portfolioName + "\n");
       if (quitHelper(portfolioName)) {
         quitFlag = true;
         return false;
@@ -292,6 +357,13 @@ public class StockMarketController implements IStockMarketController {
   }
 
 
+  /**
+   * This method takes a user input and checks if the user want to quit the application or return to
+   * the main menu.
+   *
+   * @param str the user input.
+   * @return a true if the user wants to quit the application or return to the main menu.
+   */
   private boolean quitHelper(String str) {
     if (str.contains("q") || str.contains("Q")) {
       return true;
@@ -299,6 +371,13 @@ public class StockMarketController implements IStockMarketController {
     return false;
   }
 
+  /**
+   * This method lets the user select a portfolio form a list of portfolios.
+   *
+   * @param scan the scanner object.
+   * @return the name of the selected portfolio.
+   * @throws IOException when the Appendable object fails.
+   */
   private String selectPortfolio(Scanner scan) throws IOException {
     String choice = "";
     while (true) {
@@ -307,7 +386,6 @@ public class StockMarketController implements IStockMarketController {
 
       iv.enterOptions();
       String option = scan.next();
-      automate.append(option + "\n");
       if (quitHelper(option)) {
         quitFlag = true;
         return null;
@@ -335,10 +413,14 @@ public class StockMarketController implements IStockMarketController {
     return choice;
   }
 
-
+  /**
+   * This method is used to take the ticker symbol from the user.
+   *
+   * @param scan the scanner object.
+   * @return the ticker symbol from the user.
+   */
   private String getTicker(Scanner scan) {
     String ticker = scan.next();
-    automate.append(ticker + "\n");
     if (quitHelper(ticker)) {
       quitFlag = true;
       return null;
@@ -348,6 +430,13 @@ public class StockMarketController implements IStockMarketController {
   }
 
 
+  /**
+   * This method gets the date from the user.
+   *
+   * @param scan the scanner object.
+   * @return the date in string format.
+   * @throws IOException the Appendable object fails.
+   */
   private String getDate(Scanner scan) throws IOException {
     DateUtility ut = new DateUtility();
     String date = "";
@@ -356,7 +445,6 @@ public class StockMarketController implements IStockMarketController {
 
 
       date = scan.next();
-      automate.append(date + "\n");
       if (quitHelper(date)) {
         quitFlag = true;
         return null;
@@ -374,6 +462,13 @@ public class StockMarketController implements IStockMarketController {
     return date.trim();
   }
 
+  /**
+   * This method takes the number of shares that the user wants to buy.
+   *
+   * @param scan Scanner object.
+   * @return the number of shares as Integer object.
+   * @throws IOException when the Appendable object fails.
+   */
   private Integer getNoOfShares(Scanner scan) throws IOException {
     String noOfStocks = "";
 
@@ -382,7 +477,6 @@ public class StockMarketController implements IStockMarketController {
       iv.viewEnterNumberOfShares();
 
       noOfStocks = scan.next();
-      automate.append(noOfStocks + "\n");
       if (quitHelper(noOfStocks)) {
         quitFlag = true;
         return null;
@@ -408,7 +502,13 @@ public class StockMarketController implements IStockMarketController {
   }
 
 
-  public void savePortfolio(InvestmentModelInterface fc) throws IOException {
+  /**
+   * This method serializes the Investment model that is sent to this method.
+   *
+   * @param fc the InvestmentModelInterface object.
+   * @throws IOException when the Appendable object fails.
+   */
+  private void savePortfolio(InvestmentModelInterface fc) throws IOException {
 
     try {
 
@@ -426,7 +526,12 @@ public class StockMarketController implements IStockMarketController {
     }
   }
 
-  public InvestmentModel retrievePortfolio() {
+  /**
+   * Deserialize the Investment model which was serialize.
+   *
+   * @return The object of InvestmentModel.
+   */
+  private InvestmentModel retrievePortfolio() {
     InvestmentModel savedObject = null;
 
     try {
@@ -456,45 +561,5 @@ public class StockMarketController implements IStockMarketController {
 
   }
 
-
-  public void generateTestCases() {
-    try (BufferedWriter bw = new BufferedWriter(new FileWriter("savedFile/generateTests.txt", true))) {
-
-
-      String replacement = automate.toString();
-      replacement = replacement.substring(0, automate.toString().length() - 1);
-
-
-      String a = "{in = new StringReader(\"" + replacement + "\");\n" +
-              " Appendable out = new StringBuffer();\n" +
-              " iv = new InvestmentView(out);\n" +
-              " smc = new StockMarketController(in, iv, im);\n" +
-              " smc.startStockMarket();\n" +
-              " assertEquals(\"\", out.toString());\n}";
-      bw.write(a + "\n\n");
-
-      System.out.println("Done");
-
-    } catch (IOException e) {
-
-      e.printStackTrace();
-
-    }
-  }
-
-
-  public static void main(String args[]) throws ParseException {
-//    Runnable runnable = new StockUpdaterServer(); // or an anonymous class, or lambda...
-//    Thread thread = new Thread(runnable);
-//    thread.start();
-
-
-    InvestmentModelInterface im = new InvestmentModel();
-    InvestmentView iv = new InvestmentView(System.out);
-
-
-    IStockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);
-    sm.startStockMarket();
-  }
 
 }

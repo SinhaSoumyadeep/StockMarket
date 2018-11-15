@@ -14,13 +14,34 @@ import transferable.StockTransferable;
 import utility.DateUtility;
 
 
-public class Portfolio implements Serializable,IPortfolio {
+/**
+ * This class is the concrete implementation of the IPortfolio interface.
+ * <p>A portfolio of stocks is simply a collection of stocks (e.g. 10 shares of company X, 10
+ * shares of company Y, etc.). The total value of a portfolio is then the sum of the values of its
+ * individual holdings. Thus the value of a portfolio, much like individual stocks, also changes
+ * with time. As an example, we hear about the S&P 500, Dow Jones Industrial and NASDAQ in the news,
+ * quoted to gauge the health of the overall stock market. These three “indices” are nothing more
+ * than portfolios of stocks of specific companies, which have been found to be reasonable
+ * barometers of the health of the overall stock market and economy.</p>
+ *
+ * This class allows various operations on portfolio objects such as adding stocks to the portfolio,
+ * and calculate valuation of the portfolio.
+ */
+public class Portfolio implements Serializable, IPortfolio {
   private HashMap<String, Stock> portfolio; //<Ticker,Stock>
 
+  /**
+   * This constructor instantiates a Portfolio object.
+   */
   public Portfolio() {
-    portfolio = new HashMap<>();
+    portfolio = new HashMap<String, Stock>();
   }
 
+  /**
+   * This is used to add stocks to a portfolio. This method takes in a new stock and adds theh new
+   * stock to the portfolio.
+   */
+  @Override
   public void addStocksToPortfolio(Stock newStock) {
     if (portfolio.containsKey(newStock.getTicker())) {
       Stock oldStock = portfolio.get(newStock.getTicker());
@@ -42,6 +63,15 @@ public class Portfolio implements Serializable,IPortfolio {
     }
   }
 
+
+  /**
+   * This method returns a Portfolio Transferable object has all the calculation form the Portfolio
+   * and eventually return to the controller.
+   *
+   * @param timestamp the time stamp.
+   * @return PortfolioTransferable object that contains all the calculations.
+   */
+  @Override
   public PortfolioTransferable valuationForPortfolio(String timestamp) {
     List<Transaction> stockForDate = new ArrayList<>();
     DateUtility std = new DateUtility();
@@ -63,6 +93,13 @@ public class Portfolio implements Serializable,IPortfolio {
 
   }
 
+  /**
+   * This method is used to calculate the valuation of the individual stocks as well as the
+   * portfolio. If the user wants to compare their stock which a date that is a weekand or holiday,
+   * then the stock is compared with the price with the date when the stock market was last open. If
+   * the user provides a date for which the data is unavailable, then it will inform the user that
+   * the data for the particular company is unavailable.
+   */
   private PortfolioTransferable stockEvaluation(List<Transaction> filteredTransactionListByDate, String timestamp) {
 
     PortfolioTransferable pt = new PortfolioTransferable();
@@ -85,10 +122,10 @@ public class Portfolio implements Serializable,IPortfolio {
         totalStockInvestmentForATicker = totalStockInvestmentForATicker + totalForOneTransaction;
 
       }
-      totalInvestment = totalInvestment+totalStockInvestmentForATicker;
+      totalInvestment = totalInvestment + totalStockInvestmentForATicker;
       Double totalValuationOfAStock = totalNumberOfShareForATicker * currentTickerPrice;
 
-      totalPortfolioValuation = totalPortfolioValuation+totalValuationOfAStock;
+      totalPortfolioValuation = totalPortfolioValuation + totalValuationOfAStock;
 
       StockTransferable st = new StockTransferable();
       st.setTicker(key);
@@ -109,8 +146,4 @@ public class Portfolio implements Serializable,IPortfolio {
 
   }
 
-  @Override
-  public String toString() {
-    return portfolio.toString();
-  }
 }

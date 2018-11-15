@@ -241,3 +241,16 @@
  assertEquals("", out.toString());
 }
 
+{in = new StringReader("3
+msft
+2018-11-14
+0
+q
+q");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new StockMarketController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+

@@ -1,9 +1,17 @@
-import org.junit.Before;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.InvestmentModel;
+import model.Portfolio;
+import model.Stock;
+import transferable.PortfolioTransferable;
+import transferable.StockTransferable;
+import utility.Options;
+import view.InvestmentView;
 
 import static org.junit.Assert.*;
 
@@ -133,8 +141,8 @@ public class InvestmentModelTest {
   }
 
   /**
-   * Test to check if exception is thrown when timestamp entered is a date way back in the past
-   * and for which data does not exist.
+   * Test to check if exception is thrown when timestamp entered is a date way back in the past and
+   * for which data does not exist.
    */
 
   @Test
@@ -220,7 +228,62 @@ public class InvestmentModelTest {
             toString());
   }
 
+  /**
+   * Test to check if create portfolio works correctly when user creates multiple portfolios.
+   */
 
+  @Test
+  public void testCostBasis() throws ParseException, IOException {
+    im = new InvestmentModel();
+    PortfolioTransferable p = new PortfolioTransferable();
+    List<StockTransferable> stk = new ArrayList<StockTransferable>();
+    im.createNewPortfolio("tech");
+    im.createNewPortfolio("health");
+    im.createNewPortfolio("retirement");
+    im.createNewPortfolio("education");
+    im.buyStocks("aapl", "2018-11-08", 10, "tech");
+    im.buyStocks("msft", "2018-11-07", 32, "tech");
+    im.buyStocks("goog", "2018-11-06", 27, "tech");
+    p = im.evaluatePortfolio("tech", "2018-11-15");
+
+    stk = p.getStocks();
+
+
+    assertEquals("goog",stk.get(0).getTicker());
+    assertEquals(new Integer(27),stk.get(0).getTotalNumberOfShares());
+    assertEquals(new Double(28065.96),stk.get(0).getTotalInvestment());
+    assertEquals("aapl",stk.get(1).getTicker());
+    assertEquals(new Integer(10),stk.get(1).getTotalNumberOfShares());
+    assertEquals(new Double(2099.7999999999997),stk.get(1).getTotalInvestment());
+    assertEquals("msft",stk.get(2).getTicker());
+    assertEquals(new Integer(32),stk.get(2).getTotalNumberOfShares());
+    assertEquals(new Double(3502.08),stk.get(2).getTotalInvestment());
+
+  }
+
+  /**
+   * Test to check if create portfolio works correctly when user creates multiple portfolios.
+   */
+
+  @Test
+  public void testValue() throws ParseException, IOException {
+    im = new InvestmentModel();
+    PortfolioTransferable p = new PortfolioTransferable();
+    List<StockTransferable> stk = new ArrayList<StockTransferable>();
+    im.createNewPortfolio("tech");
+    im.createNewPortfolio("health");
+    im.createNewPortfolio("retirement");
+    im.createNewPortfolio("education");
+    im.buyStocks("aapl", "2018-11-08", 10, "tech");
+    im.buyStocks("msft", "2018-11-07", 32, "tech");
+    im.buyStocks("goog", "2018-11-06", 27, "tech");
+
+    p = im.evaluatePortfolio("tech", "2018-11-13");
+    assertEquals(new Double(33667.84),p.getTotalInvestment());
+    assertEquals(new Double(33526.729999999996),p.getTotalValue());
+
+
+  }
 
 
 }

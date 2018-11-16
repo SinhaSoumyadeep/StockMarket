@@ -1,6 +1,7 @@
 package service;
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashMap;
 
@@ -14,8 +15,8 @@ import utility.DateUtility;
  * and get current price of the stoock at a certain date. This class is a singleton class that will
  * be shared by everyone.
  */
-public class StockMarketSimulation implements IStockMarketSimulation {
-
+public class StockMarketSimulation implements IStockMarketSimulation, Serializable {
+  private static final long serialVersionUID = 6033262247182979644L;
   private HashMap<String, String> companyListing;
   private static StockMarketSimulation instance = null;
 
@@ -96,12 +97,14 @@ public class StockMarketSimulation implements IStockMarketSimulation {
   @Override
   public Double priceOfAStockAtACertainDate(String ticker, String timeStamp) {
     if (companyListing.containsKey(ticker)) {
+      System.out.println("cache!!");
       String listing = companyListing.get(ticker);
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
       return Double.parseDouble(dataValue[1]);
 
     } else {
+      System.out.println("api!!");
       StockMarketServiceManager stockManager = new StockMarketServiceManager();
       String listing = stockManager.getCompanyListing(ticker);
       addCompanyToListing(ticker, listing);
@@ -137,6 +140,16 @@ public class StockMarketSimulation implements IStockMarketSimulation {
       return stockForDate(listing, date.toString());
     }
 
+  }
+
+  public String toString()
+  {
+    return companyListing.toString();
+  }
+
+  private Object readResolve()
+  {
+    return instance;
   }
 
 

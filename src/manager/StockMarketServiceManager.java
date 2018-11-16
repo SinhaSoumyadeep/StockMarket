@@ -1,6 +1,12 @@
 package manager;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
+
+import properties.PropertiesLoader;
 import service.StockMarketDAO;
+import service.StockMarketDAOFactory;
 import service.StockMarketDAOImpl;
 
 /**
@@ -14,7 +20,9 @@ public class StockMarketServiceManager {
    * This method initialize the DAO object.
    */
   public StockMarketServiceManager() {
-    dao = new StockMarketDAOImpl();
+
+    PropertiesLoader load = new PropertiesLoader();
+    dao = StockMarketDAOFactory.getStockMarketDAO(load.getValue("DATABASE"));
   }
 
   /**

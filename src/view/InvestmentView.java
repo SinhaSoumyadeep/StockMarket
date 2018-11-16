@@ -10,7 +10,7 @@ import utility.Options;
 /**
  * This class is the view that will contain everything that is to be displayed by the application.
  */
-public class InvestmentView {
+public class InvestmentView implements InvestmentViewInterface{
 
   private Appendable view;
   private Readable read;

@@ -13,9 +13,11 @@ import java.util.Scanner;
 
 import model.InvestmentModel;
 import model.InvestmentModelInterface;
+import service.StockMarketSimulation;
 import utility.DateUtility;
 import utility.Options;
 import view.InvestmentView;
+import view.InvestmentViewInterface;
 
 
 /**
@@ -50,11 +52,12 @@ import view.InvestmentView;
 public class StockMarketController implements IStockMarketController {
 
   private Readable readable;
-  private InvestmentView iv;
+  private InvestmentViewInterface iv;
   private InvestmentModelInterface im;
   private boolean quitFlag;
   private String filename;
   private Scanner scan;
+  StockMarketSimulation sm;
 
 
   /**
@@ -64,13 +67,27 @@ public class StockMarketController implements IStockMarketController {
    * @param iv       the InverstmentView  Object
    * @param im       the object of InvestmentModelInterface
    */
-  public StockMarketController(Readable readable, InvestmentView iv, InvestmentModelInterface im) {
+  public StockMarketController(Readable readable, InvestmentViewInterface iv, InvestmentModelInterface im) {
+
+    File f1 = new File("savedFile/stockMarket.txt");
+    if (f1.exists() && !f1.isDirectory()) {
+
+      System.out.println(retrievePortfolio("savedFile/savedata.txt"));
+      sm = (StockMarketSimulation) retrievePortfolio("savedFile/stockMarket.txt");
+      System.out.println(sm);
+
+    }
+    else{
+      sm = StockMarketSimulation.getInstance();
+      System.out.println(sm);
+    }
     this.readable = readable;
 
     this.filename = "savedFile/savedata.txt";
     File f = new File(this.filename);
     if (f.exists() && !f.isDirectory()) {
-      im = retrievePortfolio();
+      im = (InvestmentModelInterface) retrievePortfolio("savedFile/savedata.txt");
+
     } else {
       im = new InvestmentModel();
     }
@@ -125,6 +142,8 @@ public class StockMarketController implements IStockMarketController {
 
       String str = scan.next();
       if (quitHelper(str)) {
+        System.out.println(sm);
+        savePortfolio(StockMarketSimulation.getInstance(),"savedFile/stockMarket.txt");
         quitFlag = true;
         return;
       }
@@ -195,7 +214,7 @@ public class StockMarketController implements IStockMarketController {
             continue;
           } else {
             iv.viewBuyStockAcknowledgement();
-            savePortfolio(im);
+            savePortfolio(im, "savedFile/savedata.txt");
           }
           break;
 
@@ -206,7 +225,7 @@ public class StockMarketController implements IStockMarketController {
             continue;
           } else {
             iv.displayAllPortfolioNames(im.getPortfolioNames());
-            savePortfolio(im);
+            savePortfolio(im, "savedFile/savedata.txt");
           }
           break;
 
@@ -508,11 +527,11 @@ public class StockMarketController implements IStockMarketController {
    * @param fc the InvestmentModelInterface object.
    * @throws IOException when the Appendable object fails.
    */
-  private void savePortfolio(InvestmentModelInterface fc) throws IOException {
+  private void savePortfolio(Object fc, String filename) throws IOException {
 
     try {
 
-      FileOutputStream file = new FileOutputStream(this.filename);
+      FileOutputStream file = new FileOutputStream(filename);
       ObjectOutputStream out = new ObjectOutputStream(file);
 
       out.writeObject(fc);
@@ -531,16 +550,16 @@ public class StockMarketController implements IStockMarketController {
    *
    * @return The object of InvestmentModel.
    */
-  private InvestmentModel retrievePortfolio() {
-    InvestmentModel savedObject = null;
+  private Object retrievePortfolio(String filename) {
+    Object savedObject = null;
 
     try {
 
-      FileInputStream file = new FileInputStream(this.filename);
+      FileInputStream file = new FileInputStream(filename);
       ObjectInputStream in = new ObjectInputStream(file);
 
-
-      savedObject = (InvestmentModel) in.readObject();
+      System.out.println("inside retrieve object");
+      savedObject = in.readObject();
 
       in.close();
       file.close();

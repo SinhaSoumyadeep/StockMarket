@@ -197,5 +197,9 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
 
   }
 
+ /* public String toString(){
+    return listOfPortfolio.toString();
+  }*/
+
 
 }

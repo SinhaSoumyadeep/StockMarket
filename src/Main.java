@@ -9,6 +9,7 @@ import model.InvestModelInterfaceNew;
 import model.InvestmentModel;
 import model.InvestmentModelInterface;
 import model.InvestmentModelNew;
+import transferable.PortfolioTransferable;
 import view.InvestmentView;
 import view.InvestmentViewInterface;
 
@@ -22,19 +23,26 @@ public class Main {
    *
    * @param args the args
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws ParseException {
 
-    InvestModelInterfaceNew im = new InvestmentModelNew();
+    /*InvestModelInterfaceNew im = new InvestmentModelNew();
     try {
       im.buyStocks("aapl", "2018-11-13", 10, "abc");
       im.buyStocks("GOOG", "2018-11-13", 100, "abc");
     } catch (ParseException e) {
       e.printStackTrace();
     }
-    im.investStocks("abc",5000.0,"2018-11-13");
+
+    HashMap<String,Double> weights = new HashMap<String,Double>(){{
+      put("aapl",60.0);
+      put("GOOG",40.0);
+    }};
+    im.investStocks("abc",5000.0,weights,"2018-11-13");
+
+    System.out.println(im);*/
 
 
-    /*InvestmentModelInterface im = new InvestmentModel();
+    InvestmentModelInterface im = new InvestmentModelNew();
     InvestmentViewInterface iv = new InvestmentView(System.out);
 
     IStockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);
@@ -42,7 +50,7 @@ public class Main {
       sm.startStockMarket();
     } catch (ParseException e) {
       e.printStackTrace();
-    }*/
+    }
   }
 
 

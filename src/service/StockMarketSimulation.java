@@ -71,7 +71,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
       }
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
-      return new Stock(ticker, dataValue[0], dataValue[1], noOfShares);
+      return new Stock(ticker, dataValue[0], dataValue[4], noOfShares);
     } else {
       StockMarketServiceManager stockManager = new StockMarketServiceManager();
       String listing = stockManager.getCompanyListing(ticker);
@@ -81,7 +81,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
       addCompanyToListing(ticker, listing);
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
-      return new Stock(ticker, dataValue[0], dataValue[1], noOfShares);
+      return new Stock(ticker, dataValue[0], dataValue[4], noOfShares);
 
     }
 
@@ -101,7 +101,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
       String listing = companyListing.get(ticker);
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
-      return Double.parseDouble(dataValue[1]);
+      return Double.parseDouble(dataValue[4]);
 
     } else {
       System.out.println("api!!");
@@ -110,7 +110,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
       addCompanyToListing(ticker, listing);
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
-      return Double.parseDouble(dataValue[1]);
+      return Double.parseDouble(dataValue[4]);
 
     }
   }

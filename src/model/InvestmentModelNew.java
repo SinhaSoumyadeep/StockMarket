@@ -8,16 +8,32 @@ import service.StockMarketSimulation;
 
 public class InvestmentModelNew extends InvestmentModel implements InvestModelInterfaceNew {
 
-    HashMap<String,PortfolioWallet> wallet;
+    private HashMap<String,PortfolioWallet> wallet;
+    private HashMap<String,WeightsOfPortfolio> listOfWeights;
+
+
 
     public InvestmentModelNew()
     {
       wallet = new HashMap<String,PortfolioWallet>();
+      listOfWeights = new HashMap<String,WeightsOfPortfolio>();
+
+    }
+
+    @Override
+    public void buyStocks(String ticker, String timeStamp, Integer noOfShares, String portfolioName)
+            throws IllegalArgumentException, ParseException {
+
+
+
+
+
     }
 
   @Override
   public void investStocks(String portfolioName, Double fixedAmount, HashMap<String, Double> weights, String timeStamp) throws ParseException {
     IPortfolio investingPortfolio = this.listOfPortfolio.get(portfolioName);
+    this.listOfWeights.put(portfolioName,new WeightsOfPortfolio(weights));
     for (String key : investingPortfolio.getStockNamesInPortfolio()) {
       Double moneyForEachStock = (weights.get(key) / 100) * fixedAmount;
       investStockhelper(moneyForEachStock,key,portfolioName,timeStamp);

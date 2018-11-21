@@ -3,6 +3,7 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -93,6 +94,11 @@ public class Portfolio implements Serializable, IPortfolio {
 
   }
 
+  @Override
+  public List<String> getStockNamesInPortfolio() {
+    return new ArrayList<String>(portfolio.keySet());
+  }
+
   /**
    * This method is used to calculate the valuation of the individual stocks as well as the
    * portfolio. If the user wants to compare their stock which a date that is a weekand or holiday,
@@ -144,6 +150,12 @@ public class Portfolio implements Serializable, IPortfolio {
 
     return pt;
 
+  }
+
+  @Override
+  public String toString()
+  {
+    return portfolio.toString();
   }
 
 }

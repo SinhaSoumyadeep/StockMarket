@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import transferable.PortfolioTransferable;
 
 /**
@@ -32,4 +34,6 @@ public interface IPortfolio {
    * @return PortfolioTransferable object that contains all the calculations.
    */
   PortfolioTransferable valuationForPortfolio(String timestamp);
+
+  List<String> getStockNamesInPortfolio();
 }

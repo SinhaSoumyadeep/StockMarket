@@ -63,12 +63,14 @@ import utility.DateUtility;
  */
 public class InvestmentModel implements InvestmentModelInterface, Serializable {
   private static final long serialVersionUID = 6033262243162979644L;
-  private HashMap<String, IPortfolio> listOfPortfolio;
+  protected HashMap<String, IPortfolio> listOfPortfolio;
 
   /**
    * This constructor is used to instantiate the Investmant model.
    */
   public InvestmentModel() {
+
+    System.out.println("called from subclass");
     listOfPortfolio = new HashMap<String, IPortfolio>();
   }
 

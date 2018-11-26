@@ -62,7 +62,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
    * @return the Stock object.
    */
   @Override
-  public Stock buyStock(String ticker, String timeStamp, Integer noOfShares) {
+  public Stock buyStock(String ticker, String timeStamp, Integer noOfShares, String commission) {
 
     if (companyListing.containsKey(ticker)) {
       String listing = companyListing.get(ticker);
@@ -71,7 +71,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
       }
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
-      return new Stock(ticker, dataValue[0], dataValue[4], noOfShares);
+      return new Stock(ticker, dataValue[0], dataValue[4], noOfShares, commission);
     } else {
       StockMarketServiceManager stockManager = new StockMarketServiceManager();
       String listing = stockManager.getCompanyListing(ticker);
@@ -81,7 +81,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
       addCompanyToListing(ticker, listing);
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
-      return new Stock(ticker, dataValue[0], dataValue[4], noOfShares);
+      return new Stock(ticker, dataValue[0], dataValue[4], noOfShares,commission);
 
     }
 

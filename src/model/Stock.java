@@ -16,6 +16,7 @@ public final class Stock implements Serializable {
   private final Integer numberOfshares;
   private final List<Transaction> stockHistory;
 
+
   /**
    * This is a constructor that is used to instantiate the stock class object.
    *
@@ -24,12 +25,12 @@ public final class Stock implements Serializable {
    * @param buyingPrice    the buying price of the stock.
    * @param numberOfshares he number of shares bought.
    */
-  public Stock(String ticker, String timeStamp, String buyingPrice, Integer numberOfshares) {
+  public Stock(String ticker, String timeStamp, String buyingPrice, Integer numberOfshares, String commission) {
     this.ticker = ticker;
     this.numberOfshares = numberOfshares;
     this.totalPrice = buyingPrice;
     this.stockHistory = new ArrayList<>();
-    this.stockHistory.add(new Transaction(ticker, timeStamp, buyingPrice, numberOfshares));
+    this.stockHistory.add(new Transaction(ticker, timeStamp, buyingPrice, numberOfshares, commission));
   }
 
   /**
@@ -83,6 +84,8 @@ public final class Stock implements Serializable {
   public String getTicker() {
     return ticker;
   }
+
+
 
   public String toString()
   {

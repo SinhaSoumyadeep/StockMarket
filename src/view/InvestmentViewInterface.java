@@ -62,4 +62,6 @@ public interface InvestmentViewInterface {
 
   public void noPortfolio() throws IOException;
 
+  public void enterCommission() throws IOException;
+
 }

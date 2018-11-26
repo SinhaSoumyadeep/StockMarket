@@ -14,6 +14,7 @@ public final class Transaction implements Serializable, Comparable {
   private final String timeStamp;
   private final String buyingPrice;
   private final Integer noOfShares;
+  private final String  commission;
 
   /**
    * This constructor is used to instantiate an object of  Transaction.
@@ -23,11 +24,12 @@ public final class Transaction implements Serializable, Comparable {
    * @param buyingPrice buying price of the stock.
    * @param noOfShares  number of shares bought in one transaction.
    */
-  public Transaction(String ticker, String timeStamp, String buyingPrice, Integer noOfShares) {
+  public Transaction(String ticker, String timeStamp, String buyingPrice, Integer noOfShares, String commission) {
     this.ticker = ticker;
     this.timeStamp = timeStamp;
     this.buyingPrice = buyingPrice;
     this.noOfShares = noOfShares;
+    this.commission = commission;
   }
 
   /**
@@ -66,6 +68,10 @@ public final class Transaction implements Serializable, Comparable {
     return noOfShares;
   }
 
+
+  public String getCommission() {
+    return commission;
+  }
 
   public String toString(){
     return ticker+" : "+timeStamp;

@@ -222,6 +222,10 @@ public class InvestmentView implements InvestmentViewInterface{
     view.append("\nNo Portfolio, Create a new one.\n");
   }
 
+  public void enterCommission() throws IOException{
+    view.append("Enter commission for this transaction:\n");
+  }
+
 
 
 

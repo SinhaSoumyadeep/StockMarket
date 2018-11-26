@@ -16,7 +16,7 @@ public interface IStockMarketSimulation {
    * @param noOfShares number of shares to be purchased.
    * @return the Stock object.
    */
-  Stock buyStock(String ticker, String timeStamp, Integer noOfShares);
+  Stock buyStock(String ticker, String timeStamp, Integer noOfShares, String commission);
 
   /**
    * This method is used to retrieve the price of the a stock at a certain date.

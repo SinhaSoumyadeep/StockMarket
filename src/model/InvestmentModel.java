@@ -87,7 +87,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
    * @throws ParseException           if the date comparision fails.
    */
   @Override
-  public void buyStocks(String ticker, String timeStamp, Integer noOfShares, String portfolioName)
+  public void buyStocks(String ticker, String timeStamp, Integer noOfShares, String portfolioName, String commission)
           throws IllegalArgumentException, ParseException {
 
     checkBuyStocksParameters(ticker, timeStamp, noOfShares, portfolioName);
@@ -99,7 +99,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
     }
 
     IStockMarketSimulation stockMarket = StockMarketSimulation.getInstance();
-    Stock s = stockMarket.buyStock(ticker, timeStamp, noOfShares);
+    Stock s = stockMarket.buyStock(ticker, timeStamp, noOfShares, commission);
     if (listOfPortfolio.containsKey(portfolioName.trim())) {
       listOfPortfolio.get(portfolioName.trim()).addStocksToPortfolio(s);
     } else {

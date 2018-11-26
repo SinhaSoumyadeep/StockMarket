@@ -21,9 +21,9 @@ import utility.DateUtility;
  * <p>A portfolio of stocks is simply a collection of stocks (e.g. 10 shares of company X, 10
  * shares of company Y, etc.). The total value of a portfolio is then the sum of the values of its
  * individual holdings. Thus the value of a portfolio, much like individual stocks, also changes
- * with time. As an example, we hear about the SandP 500, Dow Jones Industrial and NASDAQ in the news,
- * quoted to gauge the health of the overall stock market. These three “indices” are nothing more
- * than portfolios of stocks of specific companies, which have been found to be reasonable
+ * with time. As an example, we hear about the SandP 500, Dow Jones Industrial and NASDAQ in the
+ * news, quoted to gauge the health of the overall stock market. These three “indices” are nothing
+ * more than portfolios of stocks of specific companies, which have been found to be reasonable
  * barometers of the health of the overall stock market and economy.</p>
  *
  * This class allows various operations on portfolio objects such as adding stocks to the portfolio,
@@ -55,11 +55,10 @@ public class Portfolio implements Serializable, IPortfolio {
       List<Transaction> transactionHistory = new ArrayList<>(oldStock.getStockHistory());
       transactionHistory.addAll(newStock.getStockHistory());
       Collections.sort(transactionHistory);
-      if(du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(transactionHistory.get(transactionHistory.size()-1).getTimeStamp())))
-      {
-        latestDate = transactionHistory.get(transactionHistory.size()-1).getTimeStamp();
+      if (du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(transactionHistory.get(transactionHistory.size() - 1).getTimeStamp()))) {
+        latestDate = transactionHistory.get(transactionHistory.size() - 1).getTimeStamp();
       }
-      System.out.println(":::::::::::::::::::::::::::>>>"+transactionHistory);
+      System.out.println(":::::::::::::::::::::::::::>>>" + transactionHistory);
 
       Double totalPrice = oldStock.getNumberOfshares() * Double.parseDouble(oldStock.getTotalPrice()) + newStock.getNumberOfshares() * Double.parseDouble(newStock.getTotalPrice());
       Integer totalNumberOfShares = oldStock.getNumberOfshares() + newStock.getNumberOfshares();
@@ -72,16 +71,15 @@ public class Portfolio implements Serializable, IPortfolio {
     } else {
       List<Transaction> t = newStock.getStockHistory();
       Collections.sort(t);
-      if(du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(t.get(t.size()-1).getTimeStamp())))
-      {
-        latestDate = t.get(t.size()-1).getTimeStamp();
+      if (du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(t.get(t.size() - 1).getTimeStamp()))) {
+        latestDate = t.get(t.size() - 1).getTimeStamp();
       }
       System.out.println(t);
       portfolio.put(newStock.getTicker(), newStock);
 
     }
 
-    System.out.println("the latest day now is:"+latestDate);
+    System.out.println("the latest day now is:" + latestDate);
   }
 
 
@@ -149,7 +147,7 @@ public class Portfolio implements Serializable, IPortfolio {
       Double totalStockInvestmentForATicker = 0.0;
       for (Transaction t : temp) {
         totalNumberOfShareForATicker = totalNumberOfShareForATicker + t.getNoOfShares();
-        Double totalForOneTransaction = Double.parseDouble(t.getBuyingPrice()) * t.getNoOfShares();
+        Double totalForOneTransaction = (Double.parseDouble(t.getBuyingPrice()) * t.getNoOfShares()) + (Double.parseDouble(t.getCommission()));
         totalStockInvestmentForATicker = totalStockInvestmentForATicker + totalForOneTransaction;
 
       }
@@ -178,8 +176,7 @@ public class Portfolio implements Serializable, IPortfolio {
   }
 
   @Override
-  public String toString()
-  {
+  public String toString() {
     return portfolio.toString();
   }
 

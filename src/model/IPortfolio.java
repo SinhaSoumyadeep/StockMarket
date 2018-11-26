@@ -36,4 +36,6 @@ public interface IPortfolio {
   PortfolioTransferable valuationForPortfolio(String timestamp);
 
   List<String> getStockNamesInPortfolio();
+
+  public String lastestTransactionDate();
 }

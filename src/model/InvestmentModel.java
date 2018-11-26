@@ -188,7 +188,10 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
     }
 
     DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-    Date passedDate = df.parse(timeStamp);
+    Date passedDate = null;
+
+    passedDate = df.parse(timeStamp);
+
     Date todayDate = new Date();
 
     if (passedDate.compareTo(todayDate) > 0) {

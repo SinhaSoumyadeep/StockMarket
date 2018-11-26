@@ -60,4 +60,6 @@ public interface InvestmentViewInterface {
    */
   public void invalidOption() throws IOException;
 
+  public void noPortfolio() throws IOException;
+
 }

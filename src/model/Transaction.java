@@ -2,11 +2,13 @@ package model;
 
 import java.io.Serializable;
 
+import utility.DateUtility;
+
 /**
  * This class represents the each transactions of the user while purchasing stock and selling stock.
  * This class has been made immutable.
  */
-public final class Transaction implements Serializable {
+public final class Transaction implements Serializable, Comparable {
 
   private final String ticker;
   private final String timeStamp;
@@ -65,4 +67,16 @@ public final class Transaction implements Serializable {
   }
 
 
+  public String toString(){
+    return ticker+" : "+timeStamp;
+  }
+  @Override
+  public int compareTo(Object o) {
+    DateUtility du = new DateUtility();
+    Transaction t = (Transaction) o;
+
+    return du.stringToDateConverter(this.timeStamp).compareTo(du.stringToDateConverter(t.timeStamp));
+
+
+  }
 }

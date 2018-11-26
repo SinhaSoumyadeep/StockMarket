@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,12 +31,14 @@ import utility.DateUtility;
  */
 public class Portfolio implements Serializable, IPortfolio {
   private HashMap<String, Stock> portfolio; //<Ticker,Stock>
+  private String latestDate;
 
   /**
    * This constructor instantiates a Portfolio object.
    */
   public Portfolio() {
     portfolio = new HashMap<String, Stock>();
+    latestDate = "1000-01-01";
   }
 
   /**
@@ -44,11 +47,19 @@ public class Portfolio implements Serializable, IPortfolio {
    */
   @Override
   public void addStocksToPortfolio(Stock newStock) {
+    DateUtility du = new DateUtility();
+
     if (portfolio.containsKey(newStock.getTicker())) {
       Stock oldStock = portfolio.get(newStock.getTicker());
 
       List<Transaction> transactionHistory = new ArrayList<>(oldStock.getStockHistory());
       transactionHistory.addAll(newStock.getStockHistory());
+      Collections.sort(transactionHistory);
+      if(du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(transactionHistory.get(transactionHistory.size()-1).getTimeStamp())))
+      {
+        latestDate = transactionHistory.get(transactionHistory.size()-1).getTimeStamp();
+      }
+      System.out.println(":::::::::::::::::::::::::::>>>"+transactionHistory);
 
       Double totalPrice = oldStock.getNumberOfshares() * Double.parseDouble(oldStock.getTotalPrice()) + newStock.getNumberOfshares() * Double.parseDouble(newStock.getTotalPrice());
       Integer totalNumberOfShares = oldStock.getNumberOfshares() + newStock.getNumberOfshares();
@@ -59,9 +70,18 @@ public class Portfolio implements Serializable, IPortfolio {
       portfolio.put(combinedStock.getTicker(), combinedStock);
 
     } else {
+      List<Transaction> t = newStock.getStockHistory();
+      Collections.sort(t);
+      if(du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(t.get(t.size()-1).getTimeStamp())))
+      {
+        latestDate = t.get(t.size()-1).getTimeStamp();
+      }
+      System.out.println(t);
       portfolio.put(newStock.getTicker(), newStock);
 
     }
+
+    System.out.println("the latest day now is:"+latestDate);
   }
 
 
@@ -97,6 +117,11 @@ public class Portfolio implements Serializable, IPortfolio {
   @Override
   public List<String> getStockNamesInPortfolio() {
     return new ArrayList<String>(portfolio.keySet());
+  }
+
+  @Override
+  public String lastestTransactionDate() {
+    return new String(latestDate);
   }
 
   /**

@@ -10,13 +10,11 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Scanner;
 
-
 import model.InvestmentModel;
 import model.InvestmentModelInterface;
-import service.StockMarketSimulation;
+import properties.PropertiesLoader;
 import utility.DateUtility;
 import utility.Options;
-import view.InvestmentView;
 import view.InvestmentViewInterface;
 
 
@@ -55,9 +53,8 @@ public class StockMarketController implements IStockMarketController {
   private InvestmentViewInterface iv;
   private InvestmentModelInterface im;
   private boolean quitFlag;
-  private String filename;
   private Scanner scan;
-  StockMarketSimulation sm;
+  private PropertiesLoader loader;
 
 
   /**
@@ -69,24 +66,12 @@ public class StockMarketController implements IStockMarketController {
    */
   public StockMarketController(Readable readable, InvestmentViewInterface iv, InvestmentModelInterface im) {
 
-    File f1 = new File("savedFile/stockMarket.txt");
-    if (f1.exists() && !f1.isDirectory()) {
 
-      System.out.println(retrievePortfolio("savedFile/savedata.txt"));
-      sm = (StockMarketSimulation) retrievePortfolio("savedFile/stockMarket.txt");
-      System.out.println(sm);
-
-    }
-    else{
-      sm = StockMarketSimulation.getInstance();
-      System.out.println(sm);
-    }
     this.readable = readable;
-
-    this.filename = "savedFile/savedata.txt";
-    File f = new File(this.filename);
+    loader = new PropertiesLoader();
+    File f = new File(loader.getValue("SAVEPORTFOLIO"));
     if (f.exists() && !f.isDirectory()) {
-      im = (InvestmentModelInterface) retrievePortfolio("savedFile/savedata.txt");
+      im = (InvestmentModelInterface) retrievePortfolio(loader.getValue("SAVEPORTFOLIO"));
 
     } else {
       im = new InvestmentModel();
@@ -142,8 +127,6 @@ public class StockMarketController implements IStockMarketController {
 
       String str = scan.next();
       if (quitHelper(str)) {
-        System.out.println(sm);
-        savePortfolio(StockMarketSimulation.getInstance(),"savedFile/stockMarket.txt");
         quitFlag = true;
         return;
       }
@@ -214,7 +197,7 @@ public class StockMarketController implements IStockMarketController {
             continue;
           } else {
             iv.viewBuyStockAcknowledgement();
-            savePortfolio(im, "savedFile/savedata.txt");
+            savePortfolio(im, loader.getValue("SAVEPORTFOLIO"));
           }
           break;
 
@@ -225,7 +208,7 @@ public class StockMarketController implements IStockMarketController {
             continue;
           } else {
             iv.displayAllPortfolioNames(im.getPortfolioNames());
-            savePortfolio(im, "savedFile/savedata.txt");
+            savePortfolio(im, loader.getValue("SAVEPORTFOLIO"));
           }
           break;
 
@@ -558,7 +541,6 @@ public class StockMarketController implements IStockMarketController {
       FileInputStream file = new FileInputStream(filename);
       ObjectInputStream in = new ObjectInputStream(file);
 
-      System.out.println("inside retrieve object");
       savedObject = in.readObject();
 
       in.close();

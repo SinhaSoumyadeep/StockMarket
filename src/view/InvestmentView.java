@@ -213,5 +213,16 @@ public class InvestmentView implements InvestmentViewInterface{
     view.append("\nYou have entered Invalid Option\n");
   }
 
+  /**
+   * View Invalid option.
+   *
+   * @throws IOException the io exception
+   */
+  public void noPortfolio() throws IOException {
+    view.append("\nNo Portfolio, Create a new one.\n");
+  }
+
+
+
 
 }

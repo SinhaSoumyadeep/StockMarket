@@ -43,7 +43,7 @@ public class Main {
     im.investStocks("abc",5000.0,weights,"2018-10-15");
 
 
-    InvestmentStrategyInterface i = new DollarCostAverageStrategy(2000.0,"2018-10-22","2018-12-21",10 );
+    InvestmentStrategyInterface i = new DollarCostAverageStrategy(2000.0,"2018-09-22","2018-12-21",10 );
     im.registerStrategy(i,"abc");
     im.evaluatePortfolio("abc","2018-11-25");
 //    System.out.println(im);

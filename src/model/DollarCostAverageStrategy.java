@@ -31,7 +31,7 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
     DateUtility d = new DateUtility();
 
     if(transactionHistory.contains(timestamp)){
-      return;
+      throw new IllegalArgumentException("Date is invalid.");
     }
     else{
       LocalDate transactionEndDateForSession = d.stringToDateConverter(timestamp);
@@ -42,6 +42,7 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
       while(nextDate.isBefore(transactionEndDateForSession)|| nextDate.isEqual(transactionEndDateForSession) )
       {
         System.out.println(nextDate);
+        //im.investStocks();
 
         nextDate = nextDate.plusDays(frequency);
       }

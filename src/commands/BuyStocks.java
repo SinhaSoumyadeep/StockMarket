@@ -58,7 +58,21 @@ public class BuyStocks extends AbstractCommand {
       throw new IllegalArgumentException("Invalid Option");
     }
     iv.enterCommission();
-    String commission = invalidityChecker(s ->s.toString());
+    String commission = invalidityChecker(s ->{
+
+      try {
+        if (Integer.parseInt(s.toString()) >= 0) {
+          return s.toString();
+        } else {
+          throw new IllegalArgumentException("enter 0 or a positive number");
+        }
+      }
+      catch (Exception e)
+      {
+        throw  new IllegalArgumentException("enter a number!");
+      }
+
+      });
 
 
     im.buyStocks(ticker.toUpperCase(), date, numberOfShares, portName, commission);

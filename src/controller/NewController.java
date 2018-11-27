@@ -112,10 +112,9 @@ public class NewController implements IStockMarketController {
 
 
       String str = scan.next();
-      /*if (quitHelper(str)) {
-        quitFlag = true;
+      if (str.equals("q")|| str.equals("Q")) {
         return;
-      }*/
+      }
       if (str.isEmpty()) {
         continue;
       }

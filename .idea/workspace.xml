@@ -7,39 +7,17 @@
     <list default="true" id="5627dda8-b439-42e4-91f3-acc446d3c5e0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/StockMarketSubmission_jar/StockMarketSubmission.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/StockMarketSubmission_jar/StockMarketSubmission.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/commands/BuyStocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/commands/BuyStocks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/controller/StockMarketController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/DollarCostAverageStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/DollarCostAverageStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestMentModelInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestMentModelInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestModelInterfaceNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestModelInterfaceNew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestmentModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestmentModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestmentModelNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/InvestmentModelNew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/Stock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/model/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/service/IStockMarketSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/service/IStockMarketSimulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/service/StockMarketSimulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/service/StockMarketSimulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/controller/NewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/controller/NewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/view/InvestmentView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/view/InvestmentView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StockMarketSubmission/view/InvestmentViewInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/StockMarketSubmission/view/InvestmentViewInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/StockMarketSubmission/InvestmentModelTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/StockMarketSubmission/StockMarketControllerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/BuyStocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/BuyStocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/StockMarketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/StockMarketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/NewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/NewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/InvestModelInterfaceNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestModelInterfaceNew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/InvestmentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestmentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/InvestmentModelInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestmentModelInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/InvestmentModelNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestmentModelNew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Stock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/IStockMarketSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/IStockMarketSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/StockMarketSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/StockMarketSimulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/InvestmentStrategyInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestmentStrategyInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/InvestmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/InvestmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/InvestmentViewInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/InvestmentViewInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/InvestmentModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/InvestmentModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/StockMarketControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StockMarketControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -132,14 +110,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="107" />
+          <entry key="java" value="119" />
           <entry key="properties" value="2" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="107" />
+          <entry key="JAVA" value="119" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="2" />
         </counts>
@@ -147,13 +125,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="49" />
-          <entry key="java" value="5954" />
+          <entry key="java" value="6620" />
           <entry key="properties" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5954" />
+          <entry key="JAVA" value="6620" />
           <entry key="PLAIN_TEXT" value="49" />
           <entry key="Properties" value="14" />
         </counts>
@@ -163,10 +141,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-80">
+              <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/InvestmentModelNew.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="87">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -175,80 +165,66 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/commands/BuyStocks.java">
+        <entry file="file://$PROJECT_DIR$/src/model/InvestmentStrategyInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/NewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/InvestmentModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="111" selection-start-line="111" selection-end-line="111" />
+            <state relative-caret-position="102">
+              <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/InvestModelInterfaceNew.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="123" selection-start-line="9" selection-start-column="123" selection-end-line="9" selection-end-column="123" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Portfolio.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2601">
+              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commands/Commands.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/commands/CreatePortfolio.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/Portfolio.java">
+        <entry file="file://$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+            <state relative-caret-position="191">
+              <caret line="48" column="77" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/InvestmentView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3825">
-              <caret line="225" column="57" selection-start-line="225" selection-start-column="57" selection-end-line="225" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/StockMarketSimulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="83" column="80" selection-start-line="83" selection-start-column="80" selection-end-line="83" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Stock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2631#2632#0" expanded="true" />
-                <element signature="e#2654#2655#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -328,25 +304,26 @@
         <option value="$PROJECT_DIR$/src/model/WeightsOfPortfolio.java" />
         <option value="$PROJECT_DIR$/properties/application.properties" />
         <option value="$PROJECT_DIR$/src/model/IStrategy.java" />
-        <option value="$PROJECT_DIR$/src/model/InvestmentStrategyInterface.java" />
         <option value="$PROJECT_DIR$/src/model/IPortfolio.java" />
-        <option value="$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java" />
         <option value="$PROJECT_DIR$/src/model/Transaction.java" />
         <option value="$PROJECT_DIR$/src/view/InvestmentViewInterface.java" />
         <option value="$PROJECT_DIR$/src/model/InvestmentModel.java" />
         <option value="$PROJECT_DIR$/src/service/IStockMarketSimulation.java" />
         <option value="$PROJECT_DIR$/src/service/StockMarketSimulation.java" />
         <option value="$PROJECT_DIR$/src/model/InvestmentModelInterface.java" />
-        <option value="$PROJECT_DIR$/src/model/InvestmentModelNew.java" />
-        <option value="$PROJECT_DIR$/src/model/InvestModelInterfaceNew.java" />
-        <option value="$PROJECT_DIR$/src/commands/BuyStocks.java" />
         <option value="$PROJECT_DIR$/src/controller/StockMarketController.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/test/InvestmentModelTest.java" />
         <option value="$PROJECT_DIR$/test/StockMarketControllerTest.java" />
         <option value="$PROJECT_DIR$/src/model/Stock.java" />
-        <option value="$PROJECT_DIR$/src/view/InvestmentView.java" />
         <option value="$PROJECT_DIR$/src/model/Portfolio.java" />
+        <option value="$PROJECT_DIR$/src/view/InvestmentView.java" />
+        <option value="$PROJECT_DIR$/src/commands/BuyStocks.java" />
+        <option value="$PROJECT_DIR$/src/controller/NewController.java" />
+        <option value="$PROJECT_DIR$/src/model/InvestModelInterfaceNew.java" />
+        <option value="$PROJECT_DIR$/src/model/InvestmentStrategyInterface.java" />
+        <option value="$PROJECT_DIR$/src/model/InvestmentModelNew.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java" />
       </list>
     </option>
   </component>
@@ -410,30 +387,6 @@
               <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
               <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="properties" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="transferable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utility" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -454,7 +407,7 @@
     <property name="SearchEverywhereHistoryKey" value="evaluate&#9;PSI&#9;JAVA://model.InvestmentModelInterface#evaluatePortfolio" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543225866029" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543289021185" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
@@ -569,7 +522,7 @@
       <workItem from="1542270554195" duration="16575000" />
       <workItem from="1542769605629" duration="21897000" />
       <workItem from="1543191074928" duration="148000" />
-      <workItem from="1543191243997" duration="25390000" />
+      <workItem from="1543191243997" duration="34275000" />
     </task>
     <servers />
   </component>
@@ -606,10 +559,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134192000" />
+    <option name="totallyTimeSpent" value="143077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21619433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -621,8 +575,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.328594" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="1.0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.85612786" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.18650089" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.8880995" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -730,11 +684,28 @@
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/InvestmentModelNew.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/InvestmentModelNew.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/model/InvestmentModelNew.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/utlity/DaysOfWeek.java" />
     <entry file="file://$PROJECT_DIR$/src/validation/Validation.java" />
     <entry file="file://$PROJECT_DIR$/src/utlity/DateUtility.java" />
     <entry file="file://$PROJECT_DIR$/src/utility/StringToDateConverter.java" />
@@ -871,24 +842,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/CreatePortfolio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/WeightsOfPortfolio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/InvestmentStrategyInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -902,16 +859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/InvestmentViewInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -919,13 +866,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/EvaluatePortfolio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -956,27 +896,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/InvestModelInterfaceNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="102" selection-start-line="8" selection-start-column="102" selection-end-line="8" selection-end-column="102" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/StockMarketController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="252" column="73" selection-end-line="566" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1006,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Stock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="-780">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2631#2632#0" expanded="true" />
@@ -1016,20 +939,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/InvestmentView.java">
+    <entry file="file://$PROJECT_DIR$/src/commands/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3825">
-          <caret line="225" column="57" selection-start-line="225" selection-start-column="57" selection-end-line="225" selection-end-column="57" />
+        <state relative-caret-position="68">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/AbstractCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/BuyStocks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="71" column="63" selection-start-line="71" selection-start-column="63" selection-end-line="71" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/NewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="114" column="46" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/SelectPortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding>
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Portfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2601">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/EvaluatePortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/InvestmentView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3281">
+          <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/commands/CreatePortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/InvestmentModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        <state relative-caret-position="121">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/InvestModelInterfaceNew.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="123" selection-start-line="9" selection-start-column="123" selection-end-line="9" selection-end-column="123" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/InvestmentStrategyInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1038,32 +1044,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/InvestmentModelNew.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="87">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/BuyStocks.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="-80">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/NewController.java">
+    <entry file="file://$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Portfolio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+        <state relative-caret-position="191">
+          <caret line="48" column="77" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

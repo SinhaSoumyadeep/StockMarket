@@ -1,6 +1,7 @@
 
 import java.io.InputStreamReader;
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.HashMap;
 
 import controller.IStockMarketController;
@@ -28,28 +29,28 @@ public class Main {
    */
   public static void main(String[] args) throws ParseException {
 
-//    InvestModelInterfaceNew im = new InvestmentModelNew();
-//    try {
-//      im.buyStocks("aapl", "2018-10-22", 10, "abc");
-//      im.buyStocks("GOOG", "2018-10-22", 100, "abc");
-//    } catch (ParseException e) {
-//      e.printStackTrace();
-//    }
+    InvestModelInterfaceNew im = new InvestmentModelNew();
+    try {
+      im.buyStocks("aapl", "2018-10-22", 10, "abc","10");
+      im.buyStocks("GOOG", "2018-10-22", 100, "abc","100");
+    } catch (ParseException e) {
+      e.printStackTrace();
+    }
 //
-//    HashMap<String,Double> weights = new HashMap<String,Double>(){{
-//      put("aapl",60.0);
-//      put("GOOG",40.0);
-//    }};
+    HashMap<String,Double> weights = new HashMap<String,Double>(){{
+      put("aapl",60.0);
+      put("GOOG",40.0);
+    }};
 //    im.investStocks("abc",5000.0,weights,"2018-10-15");
 //
 //
-////    InvestmentStrategyInterface i = new DollarCostAverageStrategy(2000.0,"2018-09-22","2018-12-21",10 );
-////    im.registerStrategy(i,"abc");
-//    im.evaluatePortfolio("abc","2018-11-25");
-//    System.out.println(im);
+    InvestmentStrategyInterface i = new DollarCostAverageStrategy(5000.0,"2018-11-21","2019-01-21",2,"10" );
+    im.registerStrategy(i,"abc",weights);
+    im.evaluatePortfolio("abc","2018-11-26");
+    System.out.println(im);
 
 
-    InvestmentModelInterface im = new InvestmentModelNew();
+    /*InvestmentModelInterface im = new InvestmentModelNew();
     InvestmentViewInterface iv = new InvestmentView(System.out);
 
 //    IStockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);
@@ -58,7 +59,8 @@ public class Main {
       sm.startStockMarket();
     } catch (ParseException e) {
       e.printStackTrace();
-    }
+    }*/
+
   }
 
 

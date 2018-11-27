@@ -3,6 +3,7 @@ package model;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import utility.DateUtility;
@@ -15,18 +16,21 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
   private String endDate;
   private Integer frequency;
   private List<String> transactionHistory;
+  private String commission;
 
   public DollarCostAverageStrategy(Double fixedAmount, String startDate, String endDate,
-                                   Integer frequency) {
+                                   Integer frequency, String commission) {
     this.fixedAmount = fixedAmount;
     this.startDate = startDate;
     this.endDate = endDate;
     this.frequency = frequency;
     this.transactionHistory = new ArrayList<>();
+    this.commission = commission;
+
   }
 
   @Override
-  public void exceuteStrategyOnPortfolio(IPortfolio portfolio, InvestModelInterfaceNew im, String timestamp) throws ParseException {
+  public void exceuteStrategyOnPortfolio(String portfolioName, InvestModelInterfaceNew im, String timestamp, HashMap<String, Double> weights) throws ParseException {
 
     DateUtility d = new DateUtility();
 
@@ -41,8 +45,8 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
 
       while(nextDate.isBefore(transactionEndDateForSession)|| nextDate.isEqual(transactionEndDateForSession) )
       {
-        System.out.println(nextDate);
-        //im.investStocks();
+        System.out.println("*************************>>>"+nextDate);
+        im.investStocks(portfolioName,fixedAmount,weights,nextDate.toString(),commission);
 
         nextDate = nextDate.plusDays(frequency);
       }

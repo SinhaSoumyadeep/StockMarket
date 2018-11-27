@@ -1,6 +1,7 @@
 package model;
 
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.HashMap;
 
 import service.IStockMarketSimulation;
@@ -27,12 +28,12 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
           throws IllegalArgumentException, ParseException {
 
 
-    //lots of checks if the stock already has a strategy.
+   /* //lots of checks if the stock already has a strategy.
 
     if(strategyTracker.containsKey(portfolioName))
     {
       throw new IllegalArgumentException("portfolio locked strategy");
-    }
+    }*/
     super.buyStocks(ticker, timeStamp, noOfShares, portfolioName, commission);
 
 
@@ -40,11 +41,11 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
 
   @Override
   public PortfolioTransferable evaluatePortfolio(String portfolioName, String timestamp){
-    if(strategyTracker.containsKey(portfolioName))
+    /*if(strategyTracker.containsKey(portfolioName))
     {
       System.out.println("already has a strategy\n");
       invest(strategyTracker.get(portfolioName),portfolioName, timestamp);
-    }
+    }*/
     return super.evaluatePortfolio(portfolioName,timestamp);
   }
 
@@ -75,10 +76,12 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   }
 
   @Override
-  public void registerStrategy(InvestmentStrategyInterface strategy, String portfolioName) {
+  public void registerStrategy(InvestmentStrategyInterface strategy, String portfolioName, HashMap<String, Double> weights ) {
     if(!strategyTracker.containsKey(portfolioName))
     {
       strategyTracker.put(portfolioName,strategy);
+      invest(strategy,portfolioName,weights);
+
     }
     else {
       throw  new IllegalArgumentException("sorry this portfolio already has a strategy");
@@ -91,9 +94,10 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
     return new HashMap<String, Double>(weightsOfAPortfolio);
   }
 
-  private void invest(InvestmentStrategyInterface strategy, String portfolioName, String timestamp) {
+  private void invest(InvestmentStrategyInterface strategy, String portfolioName, HashMap<String, Double> weights) {
     try {
-      strategy.exceuteStrategyOnPortfolio(this.listOfPortfolio.get(portfolioName), this, timestamp);
+
+      strategy.exceuteStrategyOnPortfolio(portfolioName, this, LocalDate.now().toString(), weights);
     } catch (ParseException e) {
       throw new IllegalArgumentException("Date format is Invalid");
     }

@@ -10,7 +10,7 @@ import utility.Options;
 /**
  * This class is the view that will contain everything that is to be displayed by the application.
  */
-public class InvestmentView implements InvestmentViewInterface{
+public class InvestmentView implements InvestmentViewInterface {
 
   private Appendable view;
   private Readable read;
@@ -214,7 +214,7 @@ public class InvestmentView implements InvestmentViewInterface{
   }
 
   /**
-   * View Invalid option.
+   * View display no portfolio.
    *
    * @throws IOException the io exception
    */
@@ -222,11 +222,14 @@ public class InvestmentView implements InvestmentViewInterface{
     view.append("\nNo Portfolio, Create a new one.\n");
   }
 
-  public void enterCommission() throws IOException{
+  /**
+   * View enter commission message.
+   *
+   * @throws IOException the io exception
+   */
+
+  public void enterCommission() throws IOException {
     view.append("Enter commission for this transaction:\n");
   }
-
-
-
 
 }

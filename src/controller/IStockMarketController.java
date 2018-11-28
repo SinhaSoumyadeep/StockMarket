@@ -26,7 +26,7 @@ import java.text.ParseException;
  * quits.</p>
  *
  * <p>If the move was invalid as signaled by the model, the controller transmits a message to
- * the  Appendable object “Invalid Options” plus any informative message about why the option was
+ * the  Appendable object Invalid Options plus any informative message about why the option was
  * invalid, and resume waiting for valid input.</p>
  *
  * <p>Conditions:

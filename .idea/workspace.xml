@@ -4,19 +4,7 @@
     <option name="ANALYZE_TEST_SOURCES" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5627dda8-b439-42e4-91f3-acc446d3c5e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/savedFile/generateTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/savedFile/generateTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/BuyStocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/BuyStocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/NewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/NewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DollarCostAverageStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/InvestmentModelNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InvestmentModelNew.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/StockMarketSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/StockMarketSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/InvestmentView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/InvestmentView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/InvestmentModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/InvestmentModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/StockMarketControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/StockMarketControllerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="5627dda8-b439-42e4-91f3-acc446d3c5e0" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,20 +155,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -342,18 +317,6 @@
               <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
               <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StockMarket" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StockMarket" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -377,7 +340,7 @@
     <property name="SearchEverywhereHistoryKey" value="checkDa&#9;PSI&#9;JAVA://utility.DateUtility#checkDateValidity&#10;register&#9;PSI&#9;JAVA://model.InvestModelInterfaceNew#registerStrategy&#10;evaluate&#9;PSI&#9;JAVA://model.InvestmentModelInterface#evaluatePortfolio" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543438462604" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543438583875" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -492,7 +455,7 @@
       <workItem from="1542769605629" duration="21897000" />
       <workItem from="1543191074928" duration="148000" />
       <workItem from="1543191243997" duration="73287000" />
-      <workItem from="1543403547561" duration="21590000" />
+      <workItem from="1543403547561" duration="21840000" />
     </task>
     <servers />
   </component>
@@ -529,11 +492,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203679000" />
+    <option name="totallyTimeSpent" value="203929000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="9" width="1280" height="725" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="9" width="1280" height="725" extended-state="1" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2374798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1010,8 +972,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="38" column="28" lean-forward="true" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+        <state relative-caret-position="133">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

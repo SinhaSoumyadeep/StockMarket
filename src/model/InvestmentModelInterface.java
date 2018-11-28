@@ -11,24 +11,24 @@ import transferable.PortfolioTransferable;
  *
  * <p>In its simplest form, a stock of a company is simply a part of ownership in that company.
  * Ownership is divided into shares, where a share represents a fraction of the total ownership. For
- * example, Apple has about 5.2B shares. So if you own 100 shares, you own about 1.9𝑥10−6% of the
- * company (and it would be worth about $20800 today). As a shareholder, you are an investor in the
+ * example, Apple has about 5.2B shares. So if you own 100 shares, you own about 1.9X10−6percent of the
+ * company (and it would be worth about dollar20800 today). As a shareholder, you are an investor in the
  * company. An investor sends money to the company to buy some of its stock, and gets part ownership
  * in return. The total money invested in the stock (money spent buying it) is called the cost basis
  * of the purchase. The value of the stock on a particular day is the money the investor would
  * receive if he/she sold the stock on that day.</p>
  * <p>
- * Each publicly traded company’s stock is given a unique “ticker symbol” which is used to trade it
+ * Each publicly traded company’s stock is given a unique ticker symbol which is used to trade it
  * (for example, Apple Inc. is AAPL, Microsoft is MSFT). The price of stock keeps changing all day
  * depending on how many people want to own that stock versus how many people want to sell their
  * shares. The behavior of a US stock during a day can be understood by its opening price (at 8am
  * EST when the New York Stock Exchange opens for business), its closing price (at 4pm EST when the
  * NYSE closes for regular business), its low and high price (during the day). At any point in time,
- * the total value of an investor’s holdings of a stock is simply the price of the stock at that
+ * the total value of an investors holdings of a stock is simply the price of the stock at that
  * time, multiplied by the number of shares of that stock that the investor owns.
  * </p>
  * <p>This application helps users who are new to investing to learn about how money could grow, in
- * the style of “virtual gambling”. Similar to virtual gambling, our application will not use real
+ * the style of virtual gambling. Similar to virtual gambling, our application will not use real
  * money and investment. Instead it will allow the user to create investment portfolios, try out
  * buying and selling of stock, and various investment strategies to see how they can grow (or
  * shrink) their money with time.</p>

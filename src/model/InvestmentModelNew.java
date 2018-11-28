@@ -22,13 +22,13 @@ import transferable.PortfolioTransferable;
  * cost basis of the purchase. The value of the stock on a particular day is the money the investor
  * would receive if he/she sold the stock on that day.</p>
  * <p>
- * Each publicly traded company’s stock is given a unique ticker symbol which is used to trade it
+ * Each publicly traded companys stock is given a unique ticker symbol which is used to trade it
  * for example, Apple Inc. is AAPL, Microsoft is MSFT The price of stock keeps changing all day
  * depending on how many people want to own that stock versus how many people want to sell their
  * shares. The behavior of a US stock during a day can be understood by its opening price at 8am EST
  * when the New York Stock Exchange opens for business its closing price at 4pm EST when the NYSE
  * closes for regular business its low and high price during the day. At any point in time, the
- * total value of an investor’s holdings of a stock is simply the price of the stock at that time,
+ * total value of an investors holdings of a stock is simply the price of the stock at that time,
  * multiplied by the number of shares of that stock that the investor owns.
  * </p>
  * <p>This application helps users who are new to investing to learn about how money could grow, in

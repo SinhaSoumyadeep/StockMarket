@@ -9,7 +9,7 @@ import java.util.HashMap;
  * <p>
  * Many people look to the stock market for investing because of the promise of big gains. But how
  * does one maximize gain The idea is simple buy at a low price, and sell at a high price. The main
- * challenge is to identify when a stock is at a low” price to buy and when it has reached its peak
+ * challenge is to identify when a stock is at a low price to buy and when it has reached its peak
  * to sell.
  * </p>
  * <p>

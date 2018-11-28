@@ -200,12 +200,12 @@ public class NewController implements IStockMarketController {
       String a = "{in = new StringReader(\"" + replacement + "\");\n" +
               " Appendable out = new StringBuffer();\n" +
               " iv = new InvestmentView(out);\n" +
-              " smc = new StockMarketController(in, iv, im);\n" +
+              " smc = new NewController(in, iv, im);\n" +
               " smc.startStockMarket();\n" +
               " assertEquals(\"\", out.toString());\n}";
       bw.write(a + "\n\n");
 
-      System.out.println("Done");
+
 
     } catch (IOException e) {
 

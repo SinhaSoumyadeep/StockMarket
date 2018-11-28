@@ -1,7 +1,95 @@
-{in = new StringReader("3\ngoog\n2018-11-21\n21\n2\nabc\n1\n11\n6\n1\n1234\n2018-11-21\n12\n2\nq\");
+{in = new StringReader("6\n4\nabc\n6\n1\n3\ngoog\n2018-11-14\n12\n1\n1\n15\n6\n1\n1256\n2018-11-21\n11\n1\n23\n6\n1\n1234\n2018-11-21\n11\n1\n100\n1\n1\n2018-11-21\n6\n2\na\n1\nhj\n0\n-12\n12\n2018-11-21\nf\nhjk\n-12\n0\n2\n1\n1\n2018-11-21\n6\n1\n23\n2018-11-24\n23\n2\n6\n1\n34\n1954-11-24\n34\n2\n6\nq\n4\nxyz\n6\n2\n4\nq\n3\naapl\n2018-11-13\n34\n1\n2\n21\n6\n2\n34\n2018-11-13\n34\n1\n100\n1\n2\n2018-11-13\nq\");
  Appendable out = new StringBuffer();
  iv = new InvestmentView(out);
- smc = new StockMarketController(in, iv, im);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("6\n4\nabc\n6\n1\n3\ngoog\n2018-11-14\n12\n1\n1\n15\n6\n1\n1256\n2018-11-21\n11\n1\n23\n6\n1\n1234\n2018-11-21\n11\n1\n100\n1\n1\n2018-11-21\n6\n2\na\n1\nhj\n0\n-12\n12\n2018-11-21\nf\nhjk\n-12\n0\n2\n1\n1\n2018-11-21\n6\n1\n23\n2018-11-24\n23\n2\n6\n1\n34\n1954-11-24\n34\n2\n6\nq\n4\nxyz\n6\n2\n4\nq\n3\naapl\n2018-11-13\n34\n1\n2\n21\n6\n2\n34\n2018-11-13\n34\n1\n100\n1\n2\n2018-11-13\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("6\n4\nabc\n6\n1\n3\ngoog\n2018-11-14\n12\n1\n1\n15\n6\n1\n1256\n2018-11-21\n11\n1\n23\n6\n1\n1234\n2018-11-21\n11\n1\n100\n1\n1\n2018-11-21\n6\n2\na\n1\nhj\n0\n-12\n12\n2018-11-21\nf\nhjk\n-12\n0\n2\n1\n1\n2018-11-21\n6\n1\n23\n2018-11-24\n23\n2\n6\n1\n34\n1954-11-24\n34\n2\n6\nq\n4\nxyz\n6\n2\n4\nq\n3\naapl\n2018-11-13\n34\n1\n2\n21\n6\n2\n34\n2018-11-13\n34\n1\n100\n1\n2\n2018-11-13\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("6\n4\nabc\n6\n1\n3\ngoog\n2018-11-14\n12\n1\n1\n15\n6\n1\n1256\n2018-11-21\n11\n1\n23\n6\n1\n1234\n2018-11-21\n11\n1\n100\n1\n1\n2018-11-21\n6\n2\na\n1\nhj\n0\n-12\n12\n2018-11-21\nf\nhjk\n-12\n0\n2\n1\n1\n2018-11-21\n6\n1\n23\n2018-11-24\n23\n2\n6\n1\n34\n1954-11-24\n34\n2\n6\nq\n4\nxyz\n6\n2\n4\nq\n3\naapl\n2018-11-13\n34\n1\n2\n21\n6\n2\n34\n2018-11-13\n34\n1\n100\n1\n2\n2018-11-13\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader(""3\nmsft\n2018-11-14\n12\n1\nabc\n1\n1\n1\n2018-11-15\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader(""3\nmsft\n2018-11-14\n12\n1\nabc\n1\n1\n1\n2018-11-15\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader(""3\nmsft\n2018-11-14\n12\n1\nabc\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("6\n4\nabc\n6\n1\n3\ngoog\n2018-11-14\n12\n1\n1\n15\n6\n1\n1256\n2018-11-21\n11\n1\n23\n6\n1\n1234\n2018-11-21\n11\n1\n100\n1\n1\n2018-11-21\n6\n2\na\n1\nhj\n0\n-12\n12\n2018-11-21\nf\nhjk\n-12\n0\n2\n1\n1\n2018-11-21\n6\n1\n23\n2018-11-24\n23\n2\n6\n1\n34\n1954-11-24\n34\n2\n6\nq\n4\nxyz\n6\n2\n4\nq\n3\naapl\n2018-11-13\n34\n1\n2\n21\n6\n2\n34\n2018-11-13\n34\n1\n100\n1\n2\n2018-11-13\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("6\n4\nabc\n6\n1\n3\ngoog\n2018-11-14\n12\n1\n1\n15\n6\n1\n1256\n2018-11-21\n11\n1\n23\n6\n1\n1234\n2018-11-21\n11\n1\n100\n1\n1\n2018-11-21\n6\n2\na\n1\nhj\n0\n-12\n12\n2018-11-21\nf\nhjk\n-12\n0\n2\n1\n1\n2018-11-21\n6\n1\n23\n2018-11-24\n23\n2\n6\n1\n34\n1954-11-24\n34\n2\n6\nq\n4\nxyz\n6\n2\n4\nq\n3\naapl\n2018-11-13\n34\n1\n2\n21\n6\n2\n34\n2018-11-13\n34\n1\n100\n1\n2\n2018-11-13\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("5\n4\nabc\n5\n1\n3\ngoog\n2018-11-13\n1\n1\n1\n1\n1\n1\n2018-11-13\n5\n1\n1234\n2018-11-21\n1\n2018-12-21\n2\n1\n1\n5\n1\n1234\n2018-11-21\n1\n2018-12-21\n2\n1\n100\n1\n1\n2018-11-28\n5\n1\n1234\n2018-11-22\n1\n2018-12-21\n2\n12\n100\n4\nxyz\n3\ngoog\n2018-12-21\n23\n1\n2\n12\n3\ngoog\n2018-10-13\n23\n1\n2\n12\n3\ngoog\n2018-10-22\n23\n1\n2\n12\n5\n2\n1234\n2018-11-13\n1\n2018-10-29\n2\n12\n100\n5\n2\n1234\n2018-11-13\n1\n2018-11-15\n1\n1\n100\n1\n2\n2018-11-15\n5\n2\n2134\n2018-11-17\n2\n2\n1\n100\n1\n2\n2018-11-28\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("5\n4\nabc\n5\n1\n3\ngoog\n2018-11-13\n1\n1\n1\n1\n1\n1\n2018-11-13\n5\n1\n1234\n2018-11-21\n1\n2018-12-21\n2\n1\n1\n5\n1\n1234\n2018-11-21\n1\n2018-12-21\n2\n1\n100\n1\n1\n2018-11-28\n5\n1\n1234\n2018-11-22\n1\n2018-12-21\n2\n12\n100\n4\nxyz\n3\ngoog\n2018-12-21\n23\n1\n2\n12\n3\ngoog\n2018-10-13\n23\n1\n2\n12\n3\ngoog\n2018-10-22\n23\n1\n2\n12\n5\n2\n1234\n2018-11-13\n1\n2018-10-29\n2\n12\n100\n5\n2\n1234\n2018-11-13\n1\n2018-11-15\n1\n1\n100\n1\n2\n2018-11-15\n5\n2\n2134\n2018-11-17\n2\n2\n1\n100\n1\n2\n2018-11-28\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
+ smc.startStockMarket();
+ assertEquals("", out.toString());
+}
+
+{in = new StringReader("5\n4\nabc\n5\n1\n3\ngoog\n2018-11-13\n1\n1\n1\n1\n1\n1\n2018-11-13\n5\n1\n1234\n2018-11-21\n1\n2018-12-21\n2\n1\n1\n5\n1\n1234\n2018-11-21\n1\n2018-12-21\n2\n1\n100\n1\n1\n2018-11-28\n5\n1\n1234\n2018-11-22\n1\n2018-12-21\n2\n12\n100\n4\nxyz\n3\ngoog\n2018-12-21\n23\n1\n2\n12\n3\ngoog\n2018-10-13\n23\n1\n2\n12\n3\ngoog\n2018-10-22\n23\n1\n2\n12\n5\n2\n1234\n2018-11-13\n1\n2018-10-29\n2\n12\n100\n5\n2\n1234\n2018-11-13\n1\n2018-11-15\n1\n1\n100\n1\n2\n2018-11-15\n5\n2\n2134\n2018-11-17\n2\n2\n1\n100\n1\n2\n2018-11-28\nq\");
+ Appendable out = new StringBuffer();
+ iv = new InvestmentView(out);
+ smc = new NewController(in, iv, im);
  smc.startStockMarket();
  assertEquals("", out.toString());
 }

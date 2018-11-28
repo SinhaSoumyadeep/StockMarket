@@ -97,14 +97,14 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
   @Override
   public Double priceOfAStockAtACertainDate(String ticker, String timeStamp) {
     if (companyListing.containsKey(ticker)) {
-      System.out.println("cache!!");
+
       String listing = companyListing.get(ticker);
       String tuple = stockForDate(listing, timeStamp);
       String[] dataValue = tuple.split(",");
       return Double.parseDouble(dataValue[4]);
 
     } else {
-      System.out.println("api!!");
+
       StockMarketServiceManager stockManager = new StockMarketServiceManager();
       String listing = stockManager.getCompanyListing(ticker);
       addCompanyToListing(ticker, listing);

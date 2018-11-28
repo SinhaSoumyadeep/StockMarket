@@ -53,7 +53,18 @@ public class BuyStocks extends AbstractCommand {
     });
 
     iv.viewEnterNumberOfShares();
-    Double numberOfShares = invalidityChecker(s -> Double.parseDouble(s.toString()));
+    String numberOfShares = invalidityChecker(s -> {
+      try {
+        if (Double.parseDouble(s.toString()) > 0) {
+          return s.toString();
+        } else {
+          throw new IllegalArgumentException("enter positive number for share");
+        }
+      } catch (Exception e) {
+        throw new IllegalArgumentException("enter positive number for share");
+      }
+
+    });
 
     iv.choosePortfolio();
 
@@ -85,13 +96,13 @@ public class BuyStocks extends AbstractCommand {
           throw new IllegalArgumentException("enter 0 or a positive number");
         }
       } catch (Exception e) {
-        throw new IllegalArgumentException("enter a number!");
+        throw new IllegalArgumentException("enter a a positive number!");
       }
 
     });
 
 
-    im.buyStocks(ticker.toUpperCase(), date, numberOfShares, portName, commission);
+    im.buyStocks(ticker.toUpperCase(), date, Double.parseDouble(numberOfShares), portName, commission);
     iv.viewBuyStockAcknowledgement();
   }
 

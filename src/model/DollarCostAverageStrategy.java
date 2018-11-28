@@ -56,6 +56,13 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
    */
   public DollarCostAverageStrategy(Double fixedAmount, String startDate, String endDate,
                                    Integer frequency, String commission) {
+
+    if(fixedAmount < 0){
+      throw new IllegalArgumentException("Fixed amount cannot be negative.");
+    }
+    if(frequency < 0){
+      throw new IllegalArgumentException("Frequency cannot be negative.");
+    }
     DateUtility du = new DateUtility();
     if (du.stringToDateConverter(startDate).isAfter(du.stringToDateConverter(endDate))) {
       throw new IllegalArgumentException("Start date cannot be after end date or end date cannot " +
@@ -85,6 +92,25 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
   public void exceuteStrategyOnPortfolio(String portfolioName, InvestModelInterfaceNew im, String timestamp, HashMap<String, Double> weights) throws ParseException {
     DateUtility d = new DateUtility();
 
+    Double cumulativeWeight = 0.0;
+    for (String key : weights.keySet()) {
+      cumulativeWeight = cumulativeWeight + weights.get(key);
+
+    }
+    if (cumulativeWeight != 100.0) {
+      throw new IllegalArgumentException("Weights should add up to 100.");
+    }
+
+    if (transactionHistory.containsKey(portfolioName)) {
+      if (!transactionHistory.get(portfolioName).isEmpty()) {
+        for (String endDate : transactionHistory.get(portfolioName)) {
+          if (d.stringToDateConverter(endDate).isAfter(d.stringToDateConverter(this.startDate))) {
+            throw new IllegalArgumentException("strategy is ongoing");
+          }
+        }
+      }
+    }
+
     if (d.stringToDateConverter(startDate).isBefore(d.stringToDateConverter(im.getLatestInvestmentDateForPortfolio(portfolioName)))) {
       throw new IllegalArgumentException("Start date of strategy cannot be before date of stocks purchased.");
     }
@@ -97,17 +123,8 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
     }
 
 
-    System.out.println(transactionHistory);
 
-    if (transactionHistory.containsKey(portfolioName)) {
-      if (!transactionHistory.get(portfolioName).isEmpty()) {
-        for (String endDate : transactionHistory.get(portfolioName)) {
-          if (d.stringToDateConverter(endDate).isAfter(d.stringToDateConverter(this.startDate))) {
-            throw new IllegalArgumentException("strategy is ongoing");
-          }
-        }
-      }
-    }
+
 
     LocalDate transactionEndDateForSession = d.stringToDateConverter(timestamp);
     LocalDate beginDate = d.stringToDateConverter(startDate);
@@ -124,10 +141,7 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
           nextDate = nextDate.plusDays(1);
         }
       } catch (Exception e) {
-          /*if(e.getMessage().equals("")){
 
-
-          }*/
         nextDate = nextDate.plusDays(1);
       }
 

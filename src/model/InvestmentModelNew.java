@@ -100,6 +100,10 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   public void investStocks(String portfolioName, Double fixedAmount, HashMap<String,
           Double> weights, String timeStamp, String commission) throws ParseException {
 
+    if(fixedAmount < 0){
+      throw new IllegalArgumentException("Fixed amount cannot be negative.");
+    }
+
     portfolioName = portfolioName.toUpperCase();
     if(checkIfPortfolioIsEmpty(portfolioName)){
       throw new IllegalArgumentException("Portfolio has no contents.");
@@ -141,6 +145,9 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   public void investStocks(String portfolioName, Double fixedAmount, String timeStamp,
                            String commission) throws ParseException {
 
+    if(fixedAmount < 0){
+      throw new IllegalArgumentException("Fixed amount cannot be negative.");
+    }
     portfolioName = portfolioName.toUpperCase();
     if(checkIfPortfolioIsEmpty(portfolioName)){
       throw new IllegalArgumentException("Portfolio has no contents.");

@@ -41,14 +41,14 @@ public class InvestmentView implements InvestmentViewInterface {
       for (StockTransferable st : pt.getStocks()) {
         view.append("Ticker:\t" + st.getTicker() + "\n");
         view.append("Total Number of Shares for " + st.getTicker() + ":\t" + st.getTotalNumberOfShares() + "\n");
-        view.append("Current Price for a Stock " + st.getTicker() + " on " + pt.getTimeStamp() + ":\t" + st.getCurrentPrice() + "\n");
-        view.append("Total Valuation for " + st.getTicker() + ":\t" + st.getTotalValue() + "\n");
-        view.append("Total Investment for " + st.getTicker() + ":\t" + st.getTotalInvestment() + "\n");
-        view.append("Total Return for " + st.getTicker() + ":\t" + st.getTotalReturn() + "\n\n");
+        view.append("Current Price for a Stock " + st.getTicker() + " on " + pt.getTimeStamp() + ":\t$" + st.getCurrentPrice() + "\n");
+        view.append("Total Valuation for " + st.getTicker() + ":\t$" + st.getTotalValue() + "\n");
+        view.append("Total Investment for " + st.getTicker() + ":\t$" + st.getTotalInvestment() + "\n");
+        view.append("Total Return for " + st.getTicker() + ":\t$" + st.getTotalReturn() + "\n\n");
       }
     }
-    view.append("Total Investment:\t" + pt.getTotalInvestment() + "\n");
-    view.append("Total Portfolio Valuation on " + pt.getTimeStamp() + ":\t" + pt.getTotalValue() + "\n");
+    view.append("Total Investment:\t$" + pt.getTotalInvestment() + "\n");
+    view.append("Total Portfolio Valuation on " + pt.getTimeStamp() + ":\t$" + pt.getTotalValue() + "\n");
 
   }
 
@@ -62,7 +62,6 @@ public class InvestmentView implements InvestmentViewInterface {
   public void displayAllPortfolioNames(List<String> portfolioNames) throws IOException {
 
     if (portfolioNames.size() == 0) {
-      view.append(" you have not created any portfolios yet!");
       throw new IllegalArgumentException("no portfolio!");
     }
 
@@ -80,7 +79,7 @@ public class InvestmentView implements InvestmentViewInterface {
    */
   public void viewWelcomeMessage() throws IOException {
 
-    view.append("\t\t******************************* WELCOME TO INVESTMENT ****************************************\n\n");
+    view.append("\t\t\t\t\t\t\t******************************* WELCOME TO INVESTMENT ****************************************\n\n");
 
   }
 
@@ -90,10 +89,10 @@ public class InvestmentView implements InvestmentViewInterface {
    * @throws IOException the io exception
    */
   public void viewIntroMessage() throws IOException {
-    String intro = "\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU\n\n1.View Portfolio" + "\t\t\t" +
-            "2.Portfolio Valuation" + "\t\t\t" + "3.Buy Stocks" + "\t\t\t" +
-            "4.Create new Portfolio" + "\t\t\t" + "5.Dollar Cost Average" + "\t\t\t" +
-            "6.Invest Fixed Amount\n\n\t\t\t\t\t\t\t\t\t\t\tPress Q to Quit.\n\n" + "Enter your option:\n";
+    String intro = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU\n\n1.View Portfolio" + "\t\t" +
+            "2.Portfolio Valuation" + "\t\t" + "3.Buy Stocks" + "\t\t" +
+            "4.Create new Portfolio" + "\t\t" + "5.Dollar Cost Average" + "\t\t" +
+            "6.Invest Fixed Amount\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPress Q to Quit.\n\n" + "Enter your option:\n";
     view.append(intro);
   }
 

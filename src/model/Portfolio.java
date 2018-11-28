@@ -72,7 +72,6 @@ public class Portfolio implements Serializable, IPortfolio {
       if (du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(t.get(t.size() - 1).getTimeStamp()))) {
         latestDate = t.get(t.size() - 1).getTimeStamp();
       }
-      System.out.println(t);
       portfolio.put(newStock.getTicker(), newStock);
 
     }

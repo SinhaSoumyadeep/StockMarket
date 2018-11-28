@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
 
+import model.InvestModelInterfaceNew;
 import model.InvestmentModelInterface;
 import utility.DateUtility;
 import view.InvestmentViewInterface;
 
 public class BuyStocks extends AbstractCommand {
 
-  public BuyStocks(InvestmentModelInterface im, InvestmentViewInterface iv, Scanner scan) {
+  public BuyStocks(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan) {
     this.im = im;
     this.iv = iv;
     this.scan = scan;
@@ -35,7 +36,7 @@ public class BuyStocks extends AbstractCommand {
     });
 
     iv.viewEnterNumberOfShares();
-    Integer numberOfShares = invalidityChecker(s -> Integer.parseInt(s.toString()));
+    Double numberOfShares = invalidityChecker(s -> Double.parseDouble(s.toString()));
 
     iv.choosePortfolio();
 

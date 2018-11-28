@@ -13,7 +13,7 @@ import java.util.List;
 public final class Stock implements Serializable {
   private final String ticker;
   private final String totalPrice;
-  private final Integer numberOfshares;
+  private final Double numberOfshares;
   private final List<Transaction> stockHistory;
 
 
@@ -25,7 +25,7 @@ public final class Stock implements Serializable {
    * @param buyingPrice    the buying price of the stock.
    * @param numberOfshares he number of shares bought.
    */
-  public Stock(String ticker, String timeStamp, String buyingPrice, Integer numberOfshares, String commission) {
+  public Stock(String ticker, String timeStamp, String buyingPrice, Double numberOfshares, String commission) {
     this.ticker = ticker;
     this.numberOfshares = numberOfshares;
     this.totalPrice = buyingPrice;
@@ -41,7 +41,7 @@ public final class Stock implements Serializable {
    * @param stockHistory   the transaction history
    * @param numberOfshares the number of shares bought.
    */
-  public Stock(String ticker, String totalPrice, List<Transaction> stockHistory, Integer numberOfshares) {
+  public Stock(String ticker, String totalPrice, List<Transaction> stockHistory, Double numberOfshares) {
     this.ticker = ticker;
     this.totalPrice = totalPrice;
     this.stockHistory = stockHistory;
@@ -63,7 +63,7 @@ public final class Stock implements Serializable {
    *
    * @return total number of share.
    */
-  public Integer getNumberOfshares() {
+  public Double getNumberOfshares() {
     return numberOfshares;
   }
 

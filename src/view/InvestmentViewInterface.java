@@ -20,6 +20,13 @@ public interface InvestmentViewInterface {
   void viewEnterDate() throws IOException;
   void viewErrorInvalidDate() throws IOException;
   void viewErrorSharesInFraction() throws IOException;
+  void enterFixedAmount() throws IOException;
+  void choosePortfolioToInvest() throws IOException;
+  void viewEnterStartDate() throws IOException;
+  void viewEnterEndDate() throws IOException;
+  void viewEnterFrequency() throws IOException;
+  void choosePortfolioForStrategy() throws IOException;
+  void viewEnterWeight(String stock) throws IOException;
   /**
    * Print exceptions.
    *

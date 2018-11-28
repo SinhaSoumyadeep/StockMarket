@@ -64,7 +64,7 @@ public interface InvestmentModelInterface {
    * @throws IllegalArgumentException if the stock market is closed on holidays.
    * @throws ParseException           if the date comparision fails.
    */
-  void buyStocks(String ticker, String timeStamp, Integer noOfShares, String portfolioName, String commission) throws IllegalArgumentException, ParseException;
+  void buyStocks(String ticker, String timeStamp, Double noOfShares, String portfolioName, String commission) throws IllegalArgumentException, ParseException;
 
   /**
    * This method allows the user to evaluate their portfolios against the time stamp provided.
@@ -90,4 +90,6 @@ public interface InvestmentModelInterface {
    * @throws IllegalArgumentException if the portfolio name already exists.
    */
   void createNewPortfolio(String portfolioName) throws IllegalArgumentException;
+
+  public boolean checkIfPortfolioIsEmpty(String portfolioName);
 }

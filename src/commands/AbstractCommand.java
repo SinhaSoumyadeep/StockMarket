@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.function.Function;
 
+import model.InvestModelInterfaceNew;
 import model.InvestmentModelInterface;
 import view.InvestmentViewInterface;
 
@@ -11,7 +12,7 @@ public abstract class AbstractCommand implements Commands {
 
 
   protected InvestmentViewInterface iv;
-  protected InvestmentModelInterface im;
+  protected InvestModelInterfaceNew im;
   protected Scanner scan;
 
 
@@ -49,7 +50,7 @@ public abstract class AbstractCommand implements Commands {
 
 
   protected boolean quitHelper(String str) {
-    if (str.contains("q") || str.contains("Q")) {
+    if (str.equals("q") || str.equals("Q")) {
       return true;
     }
     return false;

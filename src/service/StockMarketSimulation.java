@@ -62,7 +62,7 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
    * @return the Stock object.
    */
   @Override
-  public Stock buyStock(String ticker, String timeStamp, Integer noOfShares, String commission) {
+  public Stock buyStock(String ticker, String timeStamp, Double noOfShares, String commission) {
 
     if (companyListing.containsKey(ticker)) {
       String listing = companyListing.get(ticker);

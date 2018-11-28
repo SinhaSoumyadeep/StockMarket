@@ -3,6 +3,7 @@ package commands;
 import java.io.IOException;
 import java.util.Scanner;
 
+import model.InvestModelInterfaceNew;
 import model.InvestmentModelInterface;
 import utility.DateUtility;
 import utility.Options;
@@ -12,7 +13,7 @@ public class EvaluatePortfolio extends AbstractCommand{
 
   private Options statement;
 
-  public EvaluatePortfolio(InvestmentModelInterface im, InvestmentViewInterface iv, Scanner scan, Options statement)
+  public EvaluatePortfolio(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, Options statement)
   {
     this.im = im;
     this.iv = iv;

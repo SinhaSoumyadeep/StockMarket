@@ -13,6 +13,7 @@ import model.InvestmentModel;
 import model.InvestmentModelInterface;
 import model.InvestmentModelNew;
 import model.InvestmentStrategyInterface;
+import model.Portfolio;
 import transferable.PortfolioTransferable;
 import view.InvestmentView;
 import view.InvestmentViewInterface;
@@ -29,28 +30,40 @@ public class Main {
    */
   public static void main(String[] args) throws ParseException {
 
-    InvestModelInterfaceNew im = new InvestmentModelNew();
+    /*InvestModelInterfaceNew im = new InvestmentModelNew();
     try {
-      im.buyStocks("aapl", "2018-10-22", 10, "abc","10");
-      im.buyStocks("GOOG", "2018-10-22", 100, "abc","100");
+//      im.buyStocks("aapl", "2018-10-22", 10, "abc","10");
+      im.buyStocks("aapl", "2018-10-22", 100.0, "abc","100");
+      im.buyStocks("GOOG", "2018-10-22", 100.0, "abc","100");
+      im.buyStocks("msft", "2018-10-22", 100.0, "abc","100");
     } catch (ParseException e) {
       e.printStackTrace();
     }
 //
     HashMap<String,Double> weights = new HashMap<String,Double>(){{
       put("aapl",60.0);
-      put("GOOG",40.0);
+      put("GOOG",20.0);
+      put("msft",20.0);
     }};
-//    im.investStocks("abc",5000.0,weights,"2018-10-15");
+    im.investStocks("abc",10000.0,weights,"2018-10-22","20");
 //
 //
-    InvestmentStrategyInterface i = new DollarCostAverageStrategy(5000.0,"2018-11-21","2019-01-21",2,"10" );
-    im.registerStrategy(i,"abc",weights);
-    im.evaluatePortfolio("abc","2018-11-26");
-    System.out.println(im);
+    InvestmentStrategyInterface i = new DollarCostAverageStrategy(5000.0,"2018-11-21","2018-11-23",1,"10" );
+
+    im.registerStrategy(i,"abc",weights);*/
+/*    InvestmentStrategyInterface il = new DollarCostAverageStrategy(5000.0,"2018-11-24","2018-11-29",1,"10" );
+    im.registerStrategy(il,"abc",weights);
+
+    InvestmentStrategyInterface il2 = new DollarCostAverageStrategy(5000.0,"2018-11-25","2018-12-30",1,"10" );
+    im.registerStrategy(il2,"abc",weights);*/
+//    System.out.println(im.evaluatePortfolio("abc","2018-11-28"));
 
 
-    /*InvestmentModelInterface im = new InvestmentModelNew();
+//    System.out.println(im);
+
+
+    InvestModelInterfaceNew im = new InvestmentModelNew();
+
     InvestmentViewInterface iv = new InvestmentView(System.out);
 
 //    IStockMarketController sm = new StockMarketController(new InputStreamReader(System.in), iv, im);
@@ -59,7 +72,7 @@ public class Main {
       sm.startStockMarket();
     } catch (ParseException e) {
       e.printStackTrace();
-    }*/
+    }
 
   }
 

@@ -7,7 +7,8 @@ import java.util.Scanner;
 import commands.BuyStocks;
 import commands.CreatePortfolio;
 import commands.EvaluatePortfolio;
-import model.InvestmentModelInterface;
+import commands.DollarCostAverageCommand;
+import model.InvestModelInterfaceNew;
 import properties.PropertiesLoader;
 import utility.Options;
 import view.InvestmentViewInterface;
@@ -46,7 +47,7 @@ public class NewController implements IStockMarketController {
 
   private Readable readable;
   private InvestmentViewInterface iv;
-  private InvestmentModelInterface im;
+  private InvestModelInterfaceNew im;
   private boolean quitFlag;
   private Scanner scan;
   private PropertiesLoader loader;
@@ -59,7 +60,7 @@ public class NewController implements IStockMarketController {
    * @param iv       the InverstmentView  Object
    * @param im       the object of InvestmentModelInterface
    */
-  public NewController(Readable readable, InvestmentViewInterface iv, InvestmentModelInterface im) {
+  public NewController(Readable readable, InvestmentViewInterface iv, InvestModelInterfaceNew im) {
 
 
     this.readable = readable;
@@ -156,6 +157,14 @@ public class NewController implements IStockMarketController {
           try {
           new CreatePortfolio(im, iv, scan).execute();
           } catch (Exception e) {
+            iv.printExceptions(e.getMessage());
+            continue;
+          }
+          break;
+        case 5:
+          try {
+            new DollarCostAverageCommand(im, iv, scan).execute();
+          }catch (Exception e){
             iv.printExceptions(e.getMessage());
             continue;
           }

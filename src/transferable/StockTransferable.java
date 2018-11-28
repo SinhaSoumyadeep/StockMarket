@@ -7,7 +7,7 @@ package transferable;
  */
 public class StockTransferable {
   private String ticker;
-  private Integer totalNumberOfShares;
+  private Double totalNumberOfShares;
   private Double currentPrice;
   private Double totalValue;
   private Double totalInvestment;
@@ -36,7 +36,7 @@ public class StockTransferable {
    *
    * @return the total number of shares
    */
-  public Integer getTotalNumberOfShares() {
+  public Double getTotalNumberOfShares() {
     return totalNumberOfShares;
   }
 
@@ -45,7 +45,7 @@ public class StockTransferable {
    *
    * @param totalNumberOfShares the total number of shares
    */
-  public void setTotalNumberOfShares(Integer totalNumberOfShares) {
+  public void setTotalNumberOfShares(Double totalNumberOfShares) {
     this.totalNumberOfShares = totalNumberOfShares;
   }
 

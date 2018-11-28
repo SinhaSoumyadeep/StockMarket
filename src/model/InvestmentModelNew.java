@@ -2,7 +2,9 @@ package model;
 
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import service.IStockMarketSimulation;
 import service.StockMarketSimulation;
@@ -24,7 +26,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
 
 
   @Override
-  public void buyStocks(String ticker, String timeStamp, Integer noOfShares, String portfolioName, String commission)
+  public void buyStocks(String ticker, String timeStamp, Double noOfShares, String portfolioName, String commission)
           throws IllegalArgumentException, ParseException {
 
 
@@ -51,6 +53,14 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
 
   @Override
   public void investStocks(String portfolioName, Double fixedAmount, HashMap<String, Double> weights, String timeStamp, String commission) throws ParseException {
+    Double cumulativeWeight = 0.0;
+    for(String key : weights.keySet()){
+      cumulativeWeight = cumulativeWeight + weights.get(key);
+
+    }
+    if(cumulativeWeight != 100.0){
+      throw new IllegalArgumentException("Weights should add up to 100.");
+    }
     IPortfolio investingPortfolio = this.listOfPortfolio.get(portfolioName);
     this.listOfWeights.put(portfolioName, new WeightsOfPortfolio(weights));
     for (String key : investingPortfolio.getStockNamesInPortfolio()) {
@@ -77,15 +87,15 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
 
   @Override
   public void registerStrategy(InvestmentStrategyInterface strategy, String portfolioName, HashMap<String, Double> weights ) {
-    if(!strategyTracker.containsKey(portfolioName))
-    {
-      strategyTracker.put(portfolioName,strategy);
+//    if(!strategyTracker.containsKey(portfolioName))
+//    {
+//      strategyTracker.put(portfolioName,strategy);
       invest(strategy,portfolioName,weights);
 
-    }
-    else {
-      throw  new IllegalArgumentException("sorry this portfolio already has a strategy");
-    }
+//    }
+//    else {
+//      throw  new IllegalArgumentException("sorry this portfolio already has a strategy");
+//    }
   }
 
   @Override
@@ -110,12 +120,16 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
 
 
     Double partialNumberOfShares = (moneyForEachStock / currentStockPrice);
-    Integer wholeShares = partialNumberOfShares.intValue();
+    Double wholeShares = partialNumberOfShares;
+    System.out.println("###################### Whole shares:"+wholeShares);
 
-
+    System.out.println("ticker: " + key);
+    System.out.println("money available for each stock: " + moneyForEachStock);
+    System.out.println("current stock Price: " + currentStockPrice);
+    System.out.println("whole shares: " + wholeShares);
     buyStocks(key, timeStamp, wholeShares, portfolioName, commission);
 
-    Double remaningAmountInWallet = moneyForEachStock - (wholeShares * currentStockPrice);
+   /* Double remaningAmountInWallet = moneyForEachStock - (wholeShares * currentStockPrice);
 
     System.out.println("ticker: " + key);
     System.out.println("money available for each stock: " + moneyForEachStock);
@@ -129,9 +143,16 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
     } else {
       wallet.put(portfolioName, new PortfolioWallet(remaningAmountInWallet));
     }
+*/
 
 
+  }
 
+  public List<String> getStocksInPortfolio(String portfolioName){
+    if(this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()){
+      throw new IllegalArgumentException("Portfolio has no contents.");
+    }
+    return new ArrayList<String>(this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio());
   }
 
   public String toString() {

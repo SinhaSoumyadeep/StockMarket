@@ -13,7 +13,7 @@ public final class Transaction implements Serializable, Comparable {
   private final String ticker;
   private final String timeStamp;
   private final String buyingPrice;
-  private final Integer noOfShares;
+  private final Double noOfShares;
   private final String  commission;
 
   /**
@@ -24,7 +24,7 @@ public final class Transaction implements Serializable, Comparable {
    * @param buyingPrice buying price of the stock.
    * @param noOfShares  number of shares bought in one transaction.
    */
-  public Transaction(String ticker, String timeStamp, String buyingPrice, Integer noOfShares, String commission) {
+  public Transaction(String ticker, String timeStamp, String buyingPrice, Double noOfShares, String commission) {
     this.ticker = ticker;
     this.timeStamp = timeStamp;
     this.buyingPrice = buyingPrice;
@@ -64,7 +64,7 @@ public final class Transaction implements Serializable, Comparable {
    *
    * @return total number of share.
    */
-  public Integer getNoOfShares() {
+  public Double getNoOfShares() {
     return noOfShares;
   }
 

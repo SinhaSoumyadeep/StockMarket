@@ -70,7 +70,6 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
    */
   public InvestmentModel() {
 
-    System.out.println("called from subclass");
     listOfPortfolio = new HashMap<String, IPortfolio>();
   }
 
@@ -87,7 +86,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
    * @throws ParseException           if the date comparision fails.
    */
   @Override
-  public void buyStocks(String ticker, String timeStamp, Integer noOfShares, String portfolioName, String commission)
+  public void buyStocks(String ticker, String timeStamp, Double noOfShares, String portfolioName, String commission)
           throws IllegalArgumentException, ParseException {
 
     checkBuyStocksParameters(ticker, timeStamp, noOfShares, portfolioName);
@@ -170,7 +169,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
    * @throws IllegalArgumentException when the date is in future.
    * @throws ParseException           when the date is not in "yyyy-MM-dd" format.
    */
-  private void checkBuyStocksParameters(String ticker, String timeStamp, Integer noOfShares,
+  private void checkBuyStocksParameters(String ticker, String timeStamp, Double noOfShares,
                                         String portfolioName) throws IllegalArgumentException, ParseException {
 
 
@@ -198,6 +197,13 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
       throw new IllegalArgumentException("Date passed is in the future.");
     }
 
+  }
+
+  public boolean checkIfPortfolioIsEmpty(String portfolioName){
+    if(this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()){
+      return true;
+    }
+    return false;
   }
 
  /* public String toString(){

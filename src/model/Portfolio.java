@@ -58,10 +58,10 @@ public class Portfolio implements Serializable, IPortfolio {
       if (du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(transactionHistory.get(transactionHistory.size() - 1).getTimeStamp()))) {
         latestDate = transactionHistory.get(transactionHistory.size() - 1).getTimeStamp();
       }
-      System.out.println(":::::::::::::::::::::::::::>>>" + transactionHistory);
+      //System.out.println(":::::::::::::::::::::::::::>>>" + transactionHistory);
 
       Double totalPrice = oldStock.getNumberOfshares() * Double.parseDouble(oldStock.getTotalPrice()) + newStock.getNumberOfshares() * Double.parseDouble(newStock.getTotalPrice());
-      Integer totalNumberOfShares = oldStock.getNumberOfshares() + newStock.getNumberOfshares();
+      Double totalNumberOfShares = oldStock.getNumberOfshares() + newStock.getNumberOfshares();
       String totalPriceString = String.format("%.4f", totalPrice);
 
       Stock combinedStock = new Stock(oldStock.getTicker(), totalPriceString, transactionHistory, totalNumberOfShares);
@@ -79,7 +79,7 @@ public class Portfolio implements Serializable, IPortfolio {
 
     }
 
-    System.out.println("the latest day now is:" + latestDate);
+   // System.out.println("the latest day now is:" + latestDate);
   }
 
 
@@ -143,7 +143,7 @@ public class Portfolio implements Serializable, IPortfolio {
       Double currentTickerPrice = sms.priceOfAStockAtACertainDate(key, timestamp);
 
       List<Transaction> temp = filteredTransactionListByDate.stream().filter(t -> t.getTicker().equals(key)).collect(Collectors.toList());
-      Integer totalNumberOfShareForATicker = 0;
+      Double totalNumberOfShareForATicker = 0.0;
       Double totalStockInvestmentForATicker = 0.0;
       for (Transaction t : temp) {
         totalNumberOfShareForATicker = totalNumberOfShareForATicker + t.getNoOfShares();

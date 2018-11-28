@@ -3,6 +3,7 @@ package commands;
 import java.io.IOException;
 import java.util.List;
 
+import model.InvestModelInterfaceNew;
 import model.InvestmentModelInterface;
 import view.InvestmentViewInterface;
 
@@ -14,7 +15,7 @@ public class SelectPortfolio {
     this.choice = choice;
   }
 
-  public String execute(InvestmentModelInterface m, InvestmentViewInterface v) {
+  public String execute(InvestModelInterfaceNew m, InvestmentViewInterface v) {
 
     List<String> options = m.getPortfolioNames();
     if (options.isEmpty()) {

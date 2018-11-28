@@ -91,7 +91,7 @@ public class InvestmentView implements InvestmentViewInterface {
    */
   public void viewIntroMessage() throws IOException {
     String intro = "\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU\n\n1.View Portfolio" + "\t\t\t" + "2.Portfolio Valuation" + "\t\t\t" + "3.Buy Stocks" + "\t\t\t" +
-            "4.Create new Portfolio\n\n\t\t\t\t\t\t\t\t\t\t\tPress Q to Quit.\n\n" + "Enter your option:\n";
+            "4.Create new Portfolio" + "\t\t\t" + "5.Dollar Cost Average\n\n\t\t\t\t\t\t\t\t\t\t\tPress Q to Quit.\n\n" + "Enter your option:\n";
     view.append(intro);
   }
 
@@ -231,5 +231,83 @@ public class InvestmentView implements InvestmentViewInterface {
   public void enterCommission() throws IOException {
     view.append("Enter commission for this transaction:\n");
   }
+
+  /**
+   * View enter fixed amount message.
+   *
+   * @throws IOException the io exception
+   */
+
+  public void enterFixedAmount() throws IOException {
+    view.append("Enter fixed amount to invest in a portfolio:\n");
+  }
+
+  /**
+   * View choose weight option for investment.
+   *
+   * @throws IOException the io exception
+   */
+
+  public void chooseWeightOption() throws IOException {
+    view.append("\n1. Assign individual weights \t\t\t  2. Assign equal weights\n");
+  }
+
+  /**
+   * View choose portfolio for investment.
+   *
+   * @throws IOException the io exception
+   */
+
+  public void choosePortfolioToInvest() throws IOException {
+    view.append("Choose portfolio to invest fixed amount:\n");
+  }
+
+  /**
+   * View choose portfolio for strategy.
+   *
+   * @throws IOException the io exception
+   */
+
+  public void choosePortfolioForStrategy() throws IOException {
+    view.append("Choose portfolio to apply strategy on:\n");
+  }
+
+
+  /**
+   * View enter start date.
+   *
+   * @throws IOException the io exception
+   */
+  public void viewEnterStartDate() throws IOException {
+    view.append("\nEnter Start Date (Format: YYYY-MM-DD) or Press Q to go back to the Main menu\n");
+  }
+
+  /**
+   * View enter end date.
+   *
+   * @throws IOException the io exception
+   */
+  public void viewEnterEndDate() throws IOException {
+    view.append("\nEnter End Date (Format: YYYY-MM-DD) or Press Q to go back to the Main menu\n");
+  }
+
+  /**
+   * View enter frequency.
+   *
+   * @throws IOException the io exception
+   */
+  public void viewEnterFrequency() throws IOException {
+    view.append("\nEnter Frequency (in days) or Press Q to go back to the Main menu\n");
+  }
+
+  /**
+   * View enter weights.
+   *
+   * @throws IOException the io exception
+   */
+  public void viewEnterWeight(String stock) throws IOException {
+    view.append("\nEnter Weight for " + stock + " or Press Q to go back to the Main menu\n");
+  }
+
 
 }

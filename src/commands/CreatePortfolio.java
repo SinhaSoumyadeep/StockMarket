@@ -4,12 +4,13 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
 
+import model.InvestModelInterfaceNew;
 import model.InvestmentModelInterface;
 import view.InvestmentViewInterface;
 
 public class CreatePortfolio extends AbstractCommand {
 
-  public CreatePortfolio(InvestmentModelInterface im, InvestmentViewInterface iv, Scanner scan) {
+  public CreatePortfolio(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan) {
     this.im = im;
     this.iv = iv;
     this.scan = scan;

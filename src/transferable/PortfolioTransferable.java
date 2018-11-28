@@ -84,8 +84,5 @@ public class PortfolioTransferable {
     this.stocks = stocks;
   }
 
-  public String toString(){
-    return "** "+totalInvestment+" : "+timeStamp+" : "+totalValue+" **";
-  }
 
 }

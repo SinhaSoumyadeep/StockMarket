@@ -12,7 +12,6 @@ import commands.EvaluatePortfolio;
 import commands.DollarCostAverageCommand;
 import commands.InvestFixedAmount;
 import model.InvestModelInterfaceNew;
-import properties.PropertiesLoader;
 import utility.Options;
 import view.InvestmentViewInterface;
 

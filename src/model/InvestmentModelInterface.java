@@ -91,5 +91,11 @@ public interface InvestmentModelInterface {
    */
   void createNewPortfolio(String portfolioName) throws IllegalArgumentException;
 
+  /**
+   * This method checks if the portfolio passed is empty or not.
+   *
+   * @param portfolioName the name of the portfolio.
+   * @return true if the portfolio is empty false otherwise.
+   */
   public boolean checkIfPortfolioIsEmpty(String portfolioName);
 }

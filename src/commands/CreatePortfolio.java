@@ -5,11 +5,22 @@ import java.text.ParseException;
 import java.util.Scanner;
 
 import model.InvestModelInterfaceNew;
-import model.InvestmentModelInterface;
 import view.InvestmentViewInterface;
 
+/**
+ * This class encapsulates the Create portfolio command.
+ */
 public class CreatePortfolio extends AbstractCommand {
 
+
+  /**
+   * Instantiates a new Create portfolio.
+   *
+   * @param im       the Investment model
+   * @param iv       the Investment view
+   * @param scan     the scan the scanner object.
+   * @param automate the automate
+   */
   public CreatePortfolio(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, StringBuffer automate) {
     this.im = im;
     this.iv = iv;
@@ -17,6 +28,12 @@ public class CreatePortfolio extends AbstractCommand {
     this.automate = automate;
   }
 
+  /**
+   * this method is used to execute the command.
+   *
+   * @throws IOException    if the view fails.
+   * @throws ParseException if the date is invalid.
+   */
   @Override
   public void execute() throws IOException, ParseException {
 

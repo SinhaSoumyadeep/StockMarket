@@ -35,7 +35,17 @@ public interface IPortfolio {
    */
   PortfolioTransferable valuationForPortfolio(String timestamp);
 
+  /**
+   * This method will yield the copy of the stock names in the portfolio.
+   *
+   * @return List of stock names contained in the portfolio.
+   */
   List<String> getStockNamesInPortfolio();
 
+  /**
+   * This method will yield the latest transaction date on which a new stock was purchased.
+   *
+   * @return the latest time stamp.
+   */
   public String lastestTransactionDate();
 }

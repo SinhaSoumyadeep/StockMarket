@@ -8,7 +8,26 @@ import java.util.List;
 
 import utility.DateUtility;
 
-
+/**
+ * This class is an implementation of Dollar Cost Average Strategy which is a A popular long-term
+ * passive investment strategy is called dollar cost averaging. In this strategy, an investor
+ * creates a portfolio of stocks and determines their relative proportion example 60 percent stocks
+ * 40 percent bonds with the stocks equally divided into technology financial utility real estate
+ * consumer staple and consumer discretionary companies and the bonds equally divided into federal
+ * state and municipal bonds. Then the investor invests a fixed amount of money in this portfolio at
+ * regular frequency example invest dollar 1000 at the beginning of each month over a long period of
+ * time paying no attention to what the stock market is doing on the days of the stock purchases.
+ * This may be termed as the investment equivalent of putting a fixed amount of money in a savings
+ * account each month.The benefit of this strategy is that it is extremely simple the investor does
+ * not have to spend time and effort tweaking a portfolio, or monitoring the stock market. This
+ * strategy is based on the well-founded hypothesis that although the stock prices fluctuate every
+ * day, the long-term trend of a well-chosen portfolio is upward. The fixed-frequency investing
+ * effectively averages the unpredictable short-term gains and losses of the portfolio. While this
+ * strategy fails to capitalize on the market ups and downs it has the potential to produce a more
+ * stable gain when the strategy is followed without hesitation over a long period of time. This
+ * strategy is very popular for example most people manage their retirement accounts this way.This
+ * interface provides method to execute the strategy on the passed portfolio.
+ */
 public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
 
   private Double fixedAmount;
@@ -18,11 +37,23 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
   private static HashMap<String, List<String>> transactionHistory;
   private String commission;
 
+  /**
+   * this is a static block to initialize the record keeping.
+   */
   static {
     transactionHistory = new HashMap<String, List<String>>();
   }
 
 
+  /**
+   * This constructor instantiates the Dollar cost average strategy class.
+   *
+   * @param fixedAmount the fixed amount.
+   * @param startDate   the start day.
+   * @param endDate     the end day.
+   * @param frequency   the frequency.
+   * @param commission  the commission.
+   */
   public DollarCostAverageStrategy(Double fixedAmount, String startDate, String endDate,
                                    Integer frequency, String commission) {
     DateUtility du = new DateUtility();
@@ -39,20 +70,27 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
 
   }
 
+  /**
+   * This method takes in the portfolio name, model, time stamp and the weights to execute the
+   * strategy on the portfolio passed.
+   *
+   * @param portfolioName the portfolio name of the portfolio to execute the strategy on.
+   * @param im            the Investment model new object.
+   * @param timestamp     time stamp till which the strategy needs to be executed.
+   * @param weights       the fixed weights on which the strategy is to be executed till the end
+   *                      date.
+   * @throws ParseException if the timestamp is invalid.
+   */
   @Override
   public void exceuteStrategyOnPortfolio(String portfolioName, InvestModelInterfaceNew im, String timestamp, HashMap<String, Double> weights) throws ParseException {
     DateUtility d = new DateUtility();
 
-    if(d.stringToDateConverter(startDate).isBefore(d.stringToDateConverter(im.getLatestInvestmentDateForPortfolio(portfolioName)))){
+    if (d.stringToDateConverter(startDate).isBefore(d.stringToDateConverter(im.getLatestInvestmentDateForPortfolio(portfolioName)))) {
       throw new IllegalArgumentException("Start date of strategy cannot be before date of stocks purchased.");
     }
     if (im.checkIfPortfolioIsEmpty(portfolioName)) {
       throw new IllegalArgumentException("Portfolio has no contents.");
     }
-
-    System.out.println("\n\n Dollar Cost Average \n\n");
-
-
 
     if (d.stringToDateConverter(timestamp).isAfter(d.stringToDateConverter(this.endDate))) {
       timestamp = this.endDate;
@@ -77,39 +115,24 @@ public class DollarCostAverageStrategy implements InvestmentStrategyInterface {
     LocalDate nextDate = beginDate;
 
     while (nextDate.isBefore(transactionEndDateForSession) || nextDate.isEqual(transactionEndDateForSession)) {
-      System.out.println(">>>>>Buying Stock On:" + nextDate);
+
       try {
         if (d.isWeekDay(nextDate.toString())) {
           im.investStocks(portfolioName, fixedAmount, weights, nextDate.toString(), commission);
           nextDate = nextDate.plusDays(frequency);
         } else {
           nextDate = nextDate.plusDays(1);
-          // im.investStocks(portfolioName,fixedAmount,weights,nextDate.toString(),commission);
         }
       } catch (Exception e) {
           /*if(e.getMessage().equals("")){
 
 
           }*/
-        System.out.println(e.getMessage());
-        System.out.println("%%%%%%%%%%%%%%%%%%Holiday%%%%%%%%%%%%%%%%%%%%");
         nextDate = nextDate.plusDays(1);
       }
-      System.out.println("**************************************************************************************\n\n\n");
-//        im.investStocks(portfolioName,fixedAmount,weights,nextDate.toString(),commission);
-
 
     }
 
-
-//    IPortfolio p = portfolio;
-//
-//    System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
-//    System.out.println(p.lastestTransactionDate());
-//    System.out.println("Portfolio>>>>>>>>>>>>>>>>>>>"+p);
-
-
-    //im.investStocks(portfolioName,this.fixedAmount,im.viewWeights(portfolioName), timestamp);
     if (!transactionHistory.containsKey(portfolioName)) {
       List<String> transact = new ArrayList<String>();
       transact.add(this.endDate);

@@ -3,7 +3,6 @@ package model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -58,7 +57,6 @@ public class Portfolio implements Serializable, IPortfolio {
       if (du.stringToDateConverter(latestDate).isBefore(du.stringToDateConverter(transactionHistory.get(transactionHistory.size() - 1).getTimeStamp()))) {
         latestDate = transactionHistory.get(transactionHistory.size() - 1).getTimeStamp();
       }
-      //System.out.println(":::::::::::::::::::::::::::>>>" + transactionHistory);
 
       Double totalPrice = oldStock.getNumberOfshares() * Double.parseDouble(oldStock.getTotalPrice()) + newStock.getNumberOfshares() * Double.parseDouble(newStock.getTotalPrice());
       Double totalNumberOfShares = oldStock.getNumberOfshares() + newStock.getNumberOfshares();
@@ -79,7 +77,6 @@ public class Portfolio implements Serializable, IPortfolio {
 
     }
 
-    // System.out.println("the latest day now is:" + latestDate);
   }
 
 
@@ -112,11 +109,21 @@ public class Portfolio implements Serializable, IPortfolio {
 
   }
 
+  /**
+   * This method will yield the copy of the stock names in the portfolio.
+   *
+   * @return List of stock names contained in the portfolio.
+   */
   @Override
   public List<String> getStockNamesInPortfolio() {
     return new ArrayList<String>(portfolio.keySet());
   }
 
+  /**
+   * This method will yield the latest transaction date on which a new stock was purchased.
+   *
+   * @return the latest time stamp.
+   */
   @Override
   public String lastestTransactionDate() {
     return new String(latestDate);
@@ -175,9 +182,5 @@ public class Portfolio implements Serializable, IPortfolio {
 
   }
 
-  @Override
-  public String toString() {
-    return portfolio.toString();
-  }
 
 }

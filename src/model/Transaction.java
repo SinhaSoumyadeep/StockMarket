@@ -23,6 +23,7 @@ public final class Transaction implements Serializable, Comparable {
    * @param timeStamp   timestamp of the stock.
    * @param buyingPrice buying price of the stock.
    * @param noOfShares  number of shares bought in one transaction.
+   * @param commission  the commission
    */
   public Transaction(String ticker, String timeStamp, String buyingPrice, Double noOfShares, String commission) {
     this.ticker = ticker;
@@ -69,14 +70,22 @@ public final class Transaction implements Serializable, Comparable {
   }
 
 
+  /**
+   * Gets commission.
+   *
+   * @return commission
+   */
   public String getCommission() {
     return commission;
   }
 
-  public String toString() {
-    return ticker + " : " + timeStamp;
-  }
 
+  /**
+   * compares the dates of transactions.
+   *
+   * @param o the object passed.
+   * @return an integer that determines if the date is smaller or bigger.
+   */
   @Override
   public int compareTo(Object o) {
     DateUtility du = new DateUtility();

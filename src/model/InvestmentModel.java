@@ -89,7 +89,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
   public void buyStocks(String ticker, String timeStamp, Double noOfShares, String portfolioName, String commission)
           throws IllegalArgumentException, ParseException {
 
-    checkBuyStocksParameters(ticker, timeStamp, noOfShares, portfolioName);
+    checkBuyStocksParameters(ticker, timeStamp, noOfShares, portfolioName,commission);
 
     DateUtility checkDate = new DateUtility();
 
@@ -170,20 +170,27 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
    * @throws ParseException           when the date is not in "yyyy-MM-dd" format.
    */
   private void checkBuyStocksParameters(String ticker, String timeStamp, Double noOfShares,
-                                        String portfolioName) throws IllegalArgumentException, ParseException {
+                                        String portfolioName, String commission)
+          throws IllegalArgumentException, ParseException {
 
 
-    if (ticker == null || timeStamp == null || noOfShares == null || portfolioName == null) {
+    if (ticker == null || timeStamp == null || noOfShares == null || portfolioName == null ||
+            commission == null) {
       throw new IllegalArgumentException("Ticker or Timestamp or NoOfShares or Portfolio " +
-              "Name cannot be Null.");
+              "Name or Commission cannot be Null.");
     }
 
-    if (ticker.equals("") || timeStamp.equals("") || portfolioName.equals("")) {
-      throw new IllegalArgumentException("Ticker or Timestamp or Portfolio Name cannot be Empty.");
+    if (ticker.equals("") || timeStamp.equals("") || portfolioName.equals("") ||
+            commission.equals("")) {
+      throw new IllegalArgumentException("Ticker or Timestamp or Portfolio Name or Commission " +
+              "cannot be Empty.");
     }
 
-    if (noOfShares <= 0) {
+    if (noOfShares <= 0.0) {
       throw new IllegalArgumentException("Number of Shares cannot be 0 or negative.");
+    }
+    if (Double.parseDouble(commission) < 0.0) {
+      throw new IllegalArgumentException("Commission cannot be negative.");
     }
 
     DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -199,16 +206,18 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
 
   }
 
+  /**
+   * This method checks if the portfolio passed is empty or not.
+   *
+   * @param portfolioName the name of the portfolio.
+   * @return true if the portfolio is empty false otherwise.
+   */
   public boolean checkIfPortfolioIsEmpty(String portfolioName) {
     if (this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()) {
       return true;
     }
     return false;
   }
-
- /* public String toString(){
-    return listOfPortfolio.toString();
-  }*/
 
 
 }

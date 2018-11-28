@@ -142,15 +142,5 @@ public class StockMarketSimulation implements IStockMarketSimulation, Serializab
 
   }
 
-  public String toString()
-  {
-    return companyListing.toString();
-  }
-
-  private Object readResolve()
-  {
-    return instance;
-  }
-
 
 }

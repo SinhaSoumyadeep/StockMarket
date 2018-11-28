@@ -12,8 +12,19 @@ import model.InvestmentStrategyInterface;
 import utility.DateUtility;
 import view.InvestmentViewInterface;
 
+/**
+ * The class encapsulates the Dollar cost average command.
+ */
 public class DollarCostAverageCommand extends AbstractCommand {
 
+  /**
+   * Instantiates a new Dollar cost average command.
+   *
+   * @param im       the Investment model
+   * @param iv       the Investment view
+   * @param scan     the scan the scanner object.
+   * @param automate the automate
+   */
   public DollarCostAverageCommand(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, StringBuffer automate) {
     this.im = im;
     this.iv = iv;
@@ -21,6 +32,12 @@ public class DollarCostAverageCommand extends AbstractCommand {
     this.automate = automate;
   }
 
+  /**
+   * this method is used to execute the command.
+   *
+   * @throws IOException    if the view fails.
+   * @throws ParseException if the date is invalid.
+   */
   @Override
   public void execute() throws IOException, ParseException {
     DateUtility du = new DateUtility();
@@ -159,7 +176,6 @@ public class DollarCostAverageCommand extends AbstractCommand {
               startDate, endDate, Integer.parseInt(frequency), commission);
       im.registerStrategy(da, portName, weights);
     } catch (Exception e) {
-      System.out.println("Exception thrown)))))))))))))))))))))))))");
       iv.printExceptions(e.getMessage());
 
     }

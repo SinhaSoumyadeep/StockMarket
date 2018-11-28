@@ -86,10 +86,8 @@ public final class Stock implements Serializable {
   }
 
 
-
-  public String toString()
-  {
-    return "[ "+ticker+" : "+totalPrice+" : "+numberOfshares+" ]";
+  public String toString() {
+    return "[ " + ticker + " : " + totalPrice + " : " + numberOfshares + " ]";
   }
 
 

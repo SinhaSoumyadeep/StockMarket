@@ -79,7 +79,7 @@ public class Portfolio implements Serializable, IPortfolio {
 
     }
 
-   // System.out.println("the latest day now is:" + latestDate);
+    // System.out.println("the latest day now is:" + latestDate);
   }
 
 

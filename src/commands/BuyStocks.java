@@ -23,7 +23,7 @@ public class BuyStocks extends AbstractCommand {
     DateUtility du = new DateUtility();
     iv.viewEnterTicker();
 
-    String ticker = invalidityChecker(s ->s.toString());
+    String ticker = invalidityChecker(s -> s.toString());
 
     iv.viewEnterDate();
     String date = invalidityChecker(s -> {
@@ -43,23 +43,23 @@ public class BuyStocks extends AbstractCommand {
     String portName = "";
 
     String choice = takeInput().trim();
-    if(choice.equals("1")) {
+    if (choice.equals("1")) {
 
-      if(im.getPortfolioNames().isEmpty()){
+      if (im.getPortfolioNames().isEmpty()) {
         iv.noPortfolio();
         new CreatePortfolio(im, iv, scan).execute();
-      }else {
+      } else {
         iv.displayAllPortfolioNames(im.getPortfolioNames());
       }
       portName = invalidityChecker(s -> new SelectPortfolio(Integer.parseInt(s.toString())).execute(im, iv));
-    }else if(choice.equals("2")){
+    } else if (choice.equals("2")) {
       new CreatePortfolio(im, iv, scan).execute();
       portName = invalidityChecker(s -> new SelectPortfolio(Integer.parseInt(s.toString())).execute(im, iv));
-    }else {
+    } else {
       throw new IllegalArgumentException("Invalid Option");
     }
     iv.enterCommission();
-    String commission = invalidityChecker(s ->{
+    String commission = invalidityChecker(s -> {
 
       try {
         if (Integer.parseInt(s.toString()) >= 0) {
@@ -67,13 +67,11 @@ public class BuyStocks extends AbstractCommand {
         } else {
           throw new IllegalArgumentException("enter 0 or a positive number");
         }
-      }
-      catch (Exception e)
-      {
-        throw  new IllegalArgumentException("enter a number!");
+      } catch (Exception e) {
+        throw new IllegalArgumentException("enter a number!");
       }
 
-      });
+    });
 
 
     im.buyStocks(ticker.toUpperCase(), date, numberOfShares, portName, commission);

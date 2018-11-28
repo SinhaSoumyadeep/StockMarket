@@ -8,6 +8,7 @@ import commands.BuyStocks;
 import commands.CreatePortfolio;
 import commands.EvaluatePortfolio;
 import commands.DollarCostAverageCommand;
+import commands.InvestFixedAmount;
 import model.InvestModelInterfaceNew;
 import properties.PropertiesLoader;
 import utility.Options;
@@ -164,6 +165,15 @@ public class NewController implements IStockMarketController {
         case 5:
           try {
             new DollarCostAverageCommand(im, iv, scan).execute();
+          }catch (Exception e){
+            iv.printExceptions(e.getMessage());
+            continue;
+          }
+          break;
+
+        case 6:
+          try {
+            new InvestFixedAmount(im, iv, scan).execute();
           }catch (Exception e){
             iv.printExceptions(e.getMessage());
             continue;

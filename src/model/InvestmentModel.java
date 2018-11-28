@@ -199,8 +199,8 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
 
   }
 
-  public boolean checkIfPortfolioIsEmpty(String portfolioName){
-    if(this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()){
+  public boolean checkIfPortfolioIsEmpty(String portfolioName) {
+    if (this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()) {
       return true;
     }
     return false;

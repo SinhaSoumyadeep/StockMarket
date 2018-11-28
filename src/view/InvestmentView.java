@@ -90,8 +90,10 @@ public class InvestmentView implements InvestmentViewInterface {
    * @throws IOException the io exception
    */
   public void viewIntroMessage() throws IOException {
-    String intro = "\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU\n\n1.View Portfolio" + "\t\t\t" + "2.Portfolio Valuation" + "\t\t\t" + "3.Buy Stocks" + "\t\t\t" +
-            "4.Create new Portfolio" + "\t\t\t" + "5.Dollar Cost Average\n\n\t\t\t\t\t\t\t\t\t\t\tPress Q to Quit.\n\n" + "Enter your option:\n";
+    String intro = "\t\t\t\t\t\t\t\t\t\t\t\tMAIN MENU\n\n1.View Portfolio" + "\t\t\t" +
+            "2.Portfolio Valuation" + "\t\t\t" + "3.Buy Stocks" + "\t\t\t" +
+            "4.Create new Portfolio" + "\t\t\t" + "5.Dollar Cost Average" + "\t\t\t" +
+            "6.Invest Fixed Amount\n\n\t\t\t\t\t\t\t\t\t\t\tPress Q to Quit.\n\n" + "Enter your option:\n";
     view.append(intro);
   }
 

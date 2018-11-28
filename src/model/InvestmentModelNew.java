@@ -42,23 +42,23 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   }
 
   @Override
-  public PortfolioTransferable evaluatePortfolio(String portfolioName, String timestamp){
+  public PortfolioTransferable evaluatePortfolio(String portfolioName, String timestamp) {
     /*if(strategyTracker.containsKey(portfolioName))
     {
       System.out.println("already has a strategy\n");
       invest(strategyTracker.get(portfolioName),portfolioName, timestamp);
     }*/
-    return super.evaluatePortfolio(portfolioName,timestamp);
+    return super.evaluatePortfolio(portfolioName, timestamp);
   }
 
   @Override
   public void investStocks(String portfolioName, Double fixedAmount, HashMap<String, Double> weights, String timeStamp, String commission) throws ParseException {
     Double cumulativeWeight = 0.0;
-    for(String key : weights.keySet()){
+    for (String key : weights.keySet()) {
       cumulativeWeight = cumulativeWeight + weights.get(key);
 
     }
-    if(cumulativeWeight != 100.0){
+    if (cumulativeWeight != 100.0) {
       throw new IllegalArgumentException("Weights should add up to 100.");
     }
     IPortfolio investingPortfolio = this.listOfPortfolio.get(portfolioName);
@@ -86,11 +86,11 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   }
 
   @Override
-  public void registerStrategy(InvestmentStrategyInterface strategy, String portfolioName, HashMap<String, Double> weights ) {
+  public void registerStrategy(InvestmentStrategyInterface strategy, String portfolioName, HashMap<String, Double> weights) {
 //    if(!strategyTracker.containsKey(portfolioName))
 //    {
 //      strategyTracker.put(portfolioName,strategy);
-      invest(strategy,portfolioName,weights);
+    invest(strategy, portfolioName, weights);
 
 //    }
 //    else {
@@ -121,7 +121,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
 
     Double partialNumberOfShares = (moneyForEachStock / currentStockPrice);
     Double wholeShares = partialNumberOfShares;
-    System.out.println("###################### Whole shares:"+wholeShares);
+    System.out.println("###################### Whole shares:" + wholeShares);
 
     System.out.println("ticker: " + key);
     System.out.println("money available for each stock: " + moneyForEachStock);
@@ -148,11 +148,16 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
 
   }
 
-  public List<String> getStocksInPortfolio(String portfolioName){
-    if(this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()){
+  public List<String> getStocksInPortfolio(String portfolioName) {
+    if (this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()) {
       throw new IllegalArgumentException("Portfolio has no contents.");
     }
     return new ArrayList<String>(this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio());
+  }
+
+  public String getLatestInvestmentDateForPortfolio(String portfolioName){
+    IPortfolio p = this.listOfPortfolio.get(portfolioName);
+    return p.lastestTransactionDate();
   }
 
   public String toString() {

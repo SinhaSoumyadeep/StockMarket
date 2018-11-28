@@ -9,12 +9,11 @@ import utility.DateUtility;
 import utility.Options;
 import view.InvestmentViewInterface;
 
-public class EvaluatePortfolio extends AbstractCommand{
+public class EvaluatePortfolio extends AbstractCommand {
 
   private Options statement;
 
-  public EvaluatePortfolio(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, Options statement)
-  {
+  public EvaluatePortfolio(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, Options statement) {
     this.im = im;
     this.iv = iv;
     this.scan = scan;
@@ -39,6 +38,6 @@ public class EvaluatePortfolio extends AbstractCommand{
 
     });
 
-    iv.displayPortfolio(im.evaluatePortfolio(portName, date),this.statement);
+    iv.displayPortfolio(im.evaluatePortfolio(portName, date), this.statement);
   }
 }

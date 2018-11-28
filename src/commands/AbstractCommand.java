@@ -16,17 +16,14 @@ public abstract class AbstractCommand implements Commands {
   protected Scanner scan;
 
 
-
-
-  protected <T, R>  R invalidityChecker(Function<T, R> f) throws IOException {
+  protected <T, R> R invalidityChecker(Function<T, R> f) throws IOException {
 
     String input = takeInput();
     try {
-        return f.apply((T) input);
+      return f.apply((T) input);
 
-    }
-    catch (Exception e){
-      iv.printExceptions(e.getMessage()+", Try Again.");
+    } catch (Exception e) {
+      iv.printExceptions(e.getMessage() + ", Try Again.");
 
       return invalidityChecker(f);
     }
@@ -34,16 +31,13 @@ public abstract class AbstractCommand implements Commands {
   }
 
 
-  protected String takeInput()
-  {
+  protected String takeInput() {
     String input = scan.next().trim();
 
-    if(!quitHelper(input))
-    {
-        return input;
+    if (!quitHelper(input)) {
+      return input;
 
-    }
-    else {
+    } else {
       throw new IllegalArgumentException("Returning to Main Menu.");
     }
   }

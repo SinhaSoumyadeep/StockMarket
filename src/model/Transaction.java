@@ -14,7 +14,7 @@ public final class Transaction implements Serializable, Comparable {
   private final String timeStamp;
   private final String buyingPrice;
   private final Double noOfShares;
-  private final String  commission;
+  private final String commission;
 
   /**
    * This constructor is used to instantiate an object of  Transaction.
@@ -73,9 +73,10 @@ public final class Transaction implements Serializable, Comparable {
     return commission;
   }
 
-  public String toString(){
-    return ticker+" : "+timeStamp;
+  public String toString() {
+    return ticker + " : " + timeStamp;
   }
+
   @Override
   public int compareTo(Object o) {
     DateUtility du = new DateUtility();

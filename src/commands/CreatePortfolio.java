@@ -15,13 +15,13 @@ public class CreatePortfolio extends AbstractCommand {
     this.iv = iv;
     this.scan = scan;
   }
+
   @Override
   public void execute() throws IOException, ParseException {
 
     iv.enterPortfolio();
-    String portfolioName = invalidityChecker(s ->s.toString());
-    if(portfolioName.equals("quit"))
-    {
+    String portfolioName = invalidityChecker(s -> s.toString());
+    if (portfolioName.equals("quit")) {
       throw new IllegalArgumentException("Returning to Main Menu.");
     }
     im.createNewPortfolio(portfolioName);

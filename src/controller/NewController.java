@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
@@ -49,9 +51,8 @@ public class NewController implements IStockMarketController {
   private Readable readable;
   private InvestmentViewInterface iv;
   private InvestModelInterfaceNew im;
-  private boolean quitFlag;
   private Scanner scan;
-  private PropertiesLoader loader;
+  private StringBuffer automate = new StringBuffer();
 
 
   /**
@@ -72,7 +73,6 @@ public class NewController implements IStockMarketController {
       throw new IllegalArgumentException("Readable or View or Model cannot be Null.");
 
     }
-    this.quitFlag = false;
     this.scan = new Scanner(this.readable);
 
   }
@@ -114,7 +114,9 @@ public class NewController implements IStockMarketController {
 
 
       String str = scan.next();
+      automate.append(str+"\\n");
       if (str.equals("q")|| str.equals("Q")) {
+        generateTestCases();
         return;
       }
       if (str.isEmpty()) {
@@ -148,7 +150,7 @@ public class NewController implements IStockMarketController {
           break;
         case 3:
           try {
-            new BuyStocks(im, iv, scan).execute();
+            new BuyStocks(im, iv, scan,automate).execute();
           } catch (Exception e) {
             iv.printExceptions(e.getMessage());
             continue;
@@ -156,7 +158,7 @@ public class NewController implements IStockMarketController {
           break;
         case 4:
           try {
-          new CreatePortfolio(im, iv, scan).execute();
+          new CreatePortfolio(im, iv, scan, automate).execute();
           } catch (Exception e) {
             iv.printExceptions(e.getMessage());
             continue;
@@ -164,7 +166,7 @@ public class NewController implements IStockMarketController {
           break;
         case 5:
           try {
-            new DollarCostAverageCommand(im, iv, scan).execute();
+            new DollarCostAverageCommand(im, iv, scan, automate).execute();
           }catch (Exception e){
             iv.printExceptions(e.getMessage());
             continue;
@@ -173,7 +175,7 @@ public class NewController implements IStockMarketController {
 
         case 6:
           try {
-            new InvestFixedAmount(im, iv, scan).execute();
+            new InvestFixedAmount(im, iv, scan, automate).execute();
           }catch (Exception e){
             iv.printExceptions(e.getMessage());
             continue;
@@ -187,6 +189,34 @@ public class NewController implements IStockMarketController {
     }
 
   }
+
+  public void generateTestCases() {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter("savedFile/generateTests.txt", true))) {
+
+
+      String replacement = automate.toString();
+      replacement = replacement.substring(0, automate.toString().length() - 1);
+
+
+      String a = "{in = new StringReader(\"" + replacement + "\");\n" +
+              " Appendable out = new StringBuffer();\n" +
+              " iv = new InvestmentView(out);\n" +
+              " smc = new StockMarketController(in, iv, im);\n" +
+              " smc.startStockMarket();\n" +
+              " assertEquals(\"\", out.toString());\n}";
+      bw.write(a + "\n\n");
+
+      System.out.println("Done");
+
+    } catch (IOException e) {
+
+      e.printStackTrace();
+
+    }
+  }
+
+
+
 
 
 }

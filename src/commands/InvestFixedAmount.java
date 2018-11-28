@@ -12,12 +12,12 @@ import view.InvestmentViewInterface;
 public class InvestFixedAmount extends AbstractCommand {
 
 
-  public InvestFixedAmount(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan) {
+  public InvestFixedAmount(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, StringBuffer automate) {
     this.im = im;
     this.iv = iv;
     this.scan = scan;
+    this.automate = automate;
   }
-
 
   @Override
   public void execute() throws IOException, ParseException {

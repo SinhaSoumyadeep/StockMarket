@@ -14,10 +14,11 @@ import view.InvestmentViewInterface;
 
 public class DollarCostAverageCommand extends AbstractCommand {
 
-  public DollarCostAverageCommand(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan) {
+  public DollarCostAverageCommand(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, StringBuffer automate) {
     this.im = im;
     this.iv = iv;
     this.scan = scan;
+    this.automate = automate;
   }
 
   @Override

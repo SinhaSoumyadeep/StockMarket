@@ -13,6 +13,7 @@ public abstract class AbstractCommand implements Commands {
 
   protected InvestmentViewInterface iv;
   protected InvestModelInterfaceNew im;
+  protected StringBuffer automate;
   protected Scanner scan;
 
 
@@ -33,6 +34,7 @@ public abstract class AbstractCommand implements Commands {
 
   protected String takeInput() {
     String input = scan.next().trim();
+    automate.append(input+"\\n");
 
     if (!quitHelper(input)) {
       return input;

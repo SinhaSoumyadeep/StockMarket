@@ -11,10 +11,11 @@ import view.InvestmentViewInterface;
 
 public class BuyStocks extends AbstractCommand {
 
-  public BuyStocks(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan) {
+  public BuyStocks(InvestModelInterfaceNew im, InvestmentViewInterface iv, Scanner scan, StringBuffer automate) {
     this.im = im;
     this.iv = iv;
     this.scan = scan;
+    this.automate = automate;
   }
 
 
@@ -47,13 +48,13 @@ public class BuyStocks extends AbstractCommand {
 
       if (im.getPortfolioNames().isEmpty()) {
         iv.noPortfolio();
-        new CreatePortfolio(im, iv, scan).execute();
+        new CreatePortfolio(im, iv, scan, automate).execute();
       } else {
         iv.displayAllPortfolioNames(im.getPortfolioNames());
       }
       portName = invalidityChecker(s -> new SelectPortfolio(Integer.parseInt(s.toString())).execute(im, iv));
     } else if (choice.equals("2")) {
-      new CreatePortfolio(im, iv, scan).execute();
+      new CreatePortfolio(im, iv, scan, automate).execute();
       portName = invalidityChecker(s -> new SelectPortfolio(Integer.parseInt(s.toString())).execute(im, iv));
     } else {
       throw new IllegalArgumentException("Invalid Option");

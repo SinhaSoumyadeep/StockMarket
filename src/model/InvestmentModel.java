@@ -88,6 +88,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
   @Override
   public void buyStocks(String ticker, String timeStamp, Double noOfShares, String portfolioName, String commission)
           throws IllegalArgumentException, ParseException {
+    portfolioName = portfolioName.toUpperCase();
 
     checkBuyStocksParameters(ticker, timeStamp, noOfShares, portfolioName,commission);
 
@@ -122,6 +123,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
   public PortfolioTransferable evaluatePortfolio(String portfolioName, String timestamp)
           throws IllegalArgumentException {
 
+    portfolioName = portfolioName.toUpperCase();
     if (listOfPortfolio.containsKey(portfolioName)) {
       PortfolioTransferable statement = listOfPortfolio.get(portfolioName).valuationForPortfolio(timestamp);
       return statement;
@@ -148,6 +150,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
    */
   @Override
   public void createNewPortfolio(String portfolioName) throws IllegalArgumentException {
+    portfolioName = portfolioName.toUpperCase();
     if (!listOfPortfolio.containsKey(portfolioName)) {
       listOfPortfolio.put(portfolioName, new Portfolio());
     } else {
@@ -173,7 +176,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
                                         String portfolioName, String commission)
           throws IllegalArgumentException, ParseException {
 
-
+    portfolioName = portfolioName.toUpperCase();
     if (ticker == null || timeStamp == null || noOfShares == null || portfolioName == null ||
             commission == null) {
       throw new IllegalArgumentException("Ticker or Timestamp or NoOfShares or Portfolio " +
@@ -213,6 +216,7 @@ public class InvestmentModel implements InvestmentModelInterface, Serializable {
    * @return true if the portfolio is empty false otherwise.
    */
   public boolean checkIfPortfolioIsEmpty(String portfolioName) {
+    portfolioName = portfolioName.toUpperCase();
     if (this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()) {
       return true;
     }

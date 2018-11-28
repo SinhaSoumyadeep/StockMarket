@@ -133,7 +133,7 @@ public class NewController implements IStockMarketController {
       switch (userOption) {
         case 1:
           try {
-            new EvaluatePortfolio(im, iv, scan, Options.DETAILED_STATEMENT).execute();
+            new EvaluatePortfolio(im, iv, scan, Options.DETAILED_STATEMENT,automate).execute();
           } catch (Exception e) {
             iv.printExceptions(e.getMessage());
             continue;
@@ -141,7 +141,7 @@ public class NewController implements IStockMarketController {
           break;
         case 2:
           try {
-            new EvaluatePortfolio(im, iv, scan, Options.MINI_STATEMENT).execute();
+            new EvaluatePortfolio(im, iv, scan, Options.MINI_STATEMENT,automate).execute();
           } catch (Exception e) {
             iv.printExceptions(e.getMessage());
             continue;

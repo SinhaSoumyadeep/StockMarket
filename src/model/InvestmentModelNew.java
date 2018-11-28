@@ -100,6 +100,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   public void investStocks(String portfolioName, Double fixedAmount, HashMap<String,
           Double> weights, String timeStamp, String commission) throws ParseException {
 
+    portfolioName = portfolioName.toUpperCase();
     if(checkIfPortfolioIsEmpty(portfolioName)){
       throw new IllegalArgumentException("Portfolio has no contents.");
     }
@@ -140,6 +141,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   public void investStocks(String portfolioName, Double fixedAmount, String timeStamp,
                            String commission) throws ParseException {
 
+    portfolioName = portfolioName.toUpperCase();
     if(checkIfPortfolioIsEmpty(portfolioName)){
       throw new IllegalArgumentException("Portfolio has no contents.");
     }
@@ -166,6 +168,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
   public void registerStrategy(InvestmentStrategyInterface strategy, String portfolioName,
                                HashMap<String, Double> weights) {
 
+    portfolioName = portfolioName.toUpperCase();
     invest(strategy, portfolioName, weights);
 
   }
@@ -178,6 +181,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
    */
   @Override
   public HashMap<String, Double> viewWeights(String portfolioName) {
+    portfolioName = portfolioName.toUpperCase();
     HashMap<String, Double> weightsOfAPortfolio = this.listOfWeights.get(portfolioName).getWeight();
     return new HashMap<String, Double>(weightsOfAPortfolio);
   }
@@ -192,6 +196,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
    */
   private void invest(InvestmentStrategyInterface strategy, String portfolioName,
                       HashMap<String, Double> weights) {
+    portfolioName = portfolioName.toUpperCase();
     try {
 
       strategy.exceuteStrategyOnPortfolio(portfolioName, this,
@@ -213,6 +218,8 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
    */
   private void investStockhelper(Double moneyForEachStock, String key, String portfolioName,
                                  String timeStamp, String commission) throws ParseException {
+
+    portfolioName = portfolioName.toUpperCase();
     IStockMarketSimulation stockMarket = StockMarketSimulation.getInstance();
     Double currentStockPrice = stockMarket.priceOfAStockAtACertainDate(key, timeStamp);
 
@@ -229,6 +236,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
    */
   @Override
   public List<String> getStocksInPortfolio(String portfolioName) {
+    portfolioName = portfolioName.toUpperCase();
     if (this.listOfPortfolio.get(portfolioName).getStockNamesInPortfolio().isEmpty()) {
       throw new IllegalArgumentException("Portfolio has no contents.");
     }
@@ -244,6 +252,7 @@ public class InvestmentModelNew extends InvestmentModel implements InvestModelIn
    */
   @Override
   public String getLatestInvestmentDateForPortfolio(String portfolioName) {
+    portfolioName = portfolioName.toUpperCase();
     IPortfolio p = this.listOfPortfolio.get(portfolioName);
     return p.lastestTransactionDate();
   }

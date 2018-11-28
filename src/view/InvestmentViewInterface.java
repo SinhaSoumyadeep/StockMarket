@@ -47,6 +47,10 @@ public interface InvestmentViewInterface {
 
   void chooseWeightOption() throws IOException;
 
+  void chooseEndDateOption() throws IOException;
+
+  void ongoingEndDate() throws IOException;
+
   /**
    * Print exceptions.
    *

@@ -311,5 +311,27 @@ public class InvestmentView implements InvestmentViewInterface {
     view.append("\nEnter Weight for " + stock + " or Press Q to go back to the Main menu\n");
   }
 
+  /**
+   * View Option for end date.
+   *
+   * @throws IOException the io exception
+   */
+
+  public void chooseEndDateOption() throws IOException {
+    view.append("\n1. Provide end date \t\t\t  2. Allow ongoing strategy\n");
+  }
+
+  /**
+   * View Ongoing end date.
+   *
+   * @throws IOException the io exception
+   */
+
+  public void ongoingEndDate() throws IOException {
+    view.append("\n The strategy will be ongoing\n");
+  }
+
+
+
 
 }

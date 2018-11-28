@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -66,15 +67,39 @@ public class DollarCostAverageCommand extends AbstractCommand {
 
     });
 
-    iv.viewEnterEndDate();
-    String endDate = invalidityChecker(s -> {
-      if (du.checkDateValidity(s.toString())) {
-        return s.toString();
-      } else {
-        throw new IllegalArgumentException("invalid Date");
+
+    iv.chooseEndDateOption();
+    String choice = invalidityChecker(s -> {
+
+      try {
+        if (Integer.parseInt(s.toString()) > 0 && Integer.parseInt(s.toString()) <= 2) {
+          return s.toString();
+        } else {
+          throw new IllegalArgumentException("Enter 0 or a positive number");
+        }
+      } catch (Exception e) {
+        throw new IllegalArgumentException("Option should be a number.");
       }
 
     });
+
+    String endDate = "";
+
+    if(choice.equals("1")) {
+      iv.viewEnterEndDate();
+      endDate = invalidityChecker(s -> {
+        if (du.checkDateValidity(s.toString())) {
+          return s.toString();
+        } else {
+          throw new IllegalArgumentException("invalid Date");
+        }
+
+      });
+    }
+    else if(choice.equals("2")){
+      endDate = LocalDate.now().toString();
+      iv.ongoingEndDate();
+    }
 
     iv.viewEnterFrequency();
     String frequency = invalidityChecker(s -> {
@@ -133,7 +158,9 @@ public class DollarCostAverageCommand extends AbstractCommand {
               startDate, endDate, Integer.parseInt(frequency), commission);
       im.registerStrategy(da, portName, weights);
     } catch (Exception e) {
+      System.out.println("Exception thrown)))))))))))))))))))))))))");
       iv.printExceptions(e.getMessage());
+
     }
 
 
